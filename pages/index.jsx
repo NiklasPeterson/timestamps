@@ -1,7 +1,22 @@
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
+import TimeForm from '../components/TimeForm';
+import TimeStamps from '../components/TimeStamps';
 import Title from '../components/Title'
 
 export default function Home() {
+  const [dateTime, setDateTime] = useState({});
+
+  useEffect( () => {
+    const date = new Date();
+    date.setSeconds(0);
+    setDateTime(date);
+  }, [])
+
+  const gotATime = dateTime => {
+    setDateTime(dateTime);
+  }
+  
   return (
   <>
     <Head>
@@ -10,8 +25,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Title>Hello?</Title>
-    <p>Yo!</p>
+    <main>
+      <Title>Enter your time!</Title>
+      <TimeForm newTime={gotATime} />
+      <TimeStamps dateTime={dateTime} />
+    </main>
   </>
   )
 }

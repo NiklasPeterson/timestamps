@@ -10,22 +10,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-	--color-background: #fafafa;
-	--color-text: #1e2024;
-}
+    --color-background: #fafafa;
+    --color-text: #1e2024;
+  }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-background: #1e2024;
-		--color-text: #fafafa;
-	}
-}
-
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: #1e2024;
+      --color-text: #fafafa;
+    }
+  }
 `
-
-export const theme = {
-  colors: {
-    primary: 'blue',
-    secondary: 'green',
-  },
-}
