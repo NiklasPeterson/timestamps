@@ -15,47 +15,47 @@ const TimeStamps = props => {
     <>
 
       <ResultRow>
-        <span>Format</span>
-        <span>Timestamp</span>
+        <strong>Format</strong>
+        <strong>Timestamp</strong>
       </ResultRow>
 
       <ResultRow>
-        <span>{moment(props.dateTime).format('LLL')}</span>
+        <label>{moment(props.dateTime).format('LLL')}</label>
         <CodeGroup label="Default Date Time" value={`<t:${timestamp}>`} />
       </ResultRow>
 
       <ResultRow>
-        <span>{moment(props.dateTime).format('LLL')}</span>
+        <label>{moment(props.dateTime).format('LLL')}</label>
         <CodeGroup label="Short Date Time" value={`<t:${timestamp}:f>`} />
       </ResultRow>
 
       <ResultRow>
-        <span>{moment(props.dateTime).format('LLLL')}</span>
+        <label>{moment(props.dateTime).format('LLLL')}</label>
         <CodeGroup label="Long Date Time" value={`<t:${timestamp}:F>`} />
       </ResultRow>
 
       <ResultRow>
-        <span>{moment(props.dateTime).format('L')}</span>
+        <label>{moment(props.dateTime).format('L')}</label>
         <CodeGroup label="Short Date" value={`<t:${timestamp}:d>`} />
       </ResultRow>
 
       <ResultRow>
-        <span>{moment(props.dateTime).format('LL')}</span>
+        <label>{moment(props.dateTime).format('LL')}</label>
         <CodeGroup label="Long Date" value={`<t:${timestamp}:D>`} />
       </ResultRow>
 
       <ResultRow>
-        <span>{moment(props.dateTime).format('LT')}</span>
+        <label>{moment(props.dateTime).format('LT')}</label>
         <CodeGroup label="Short Time" value={`<t:${timestamp}:t>`} />
       </ResultRow>
 
       {/* <ResultRow>
-        <span>{moment(props.dateTime).format('Ltimestamp')}</span>
+        <label>{moment(props.dateTime).format('Ltimestamp')}</label>
         <CodeGroup label="Long Time" value={`<t:${timestamp}:T>`} />
       </ResultRow> */}
 
       <ResultRow>
-        <span>{moment(props.dateTime).fromNow()}</span>
+        <label>{moment(props.dateTime).fromNow()}</label>
         <CodeGroup label="Relative Time" value={`<t:${timestamp}:R>`} />
       </ResultRow>
 

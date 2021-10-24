@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
 import styled from 'styled-components';
+import { Toaster } from 'react-hot-toast';
+
 import TimeForm from '../components/TimeForm';
 import TimeStamps from '../components/TimeStamps';
 
@@ -26,6 +28,12 @@ export default function Home() {
     </Head>
 
     <ScWrapper>
+      <div>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
+      </div>
       <ScMain>
         <ScTitle>Enter your time!</ScTitle>
         <TimeForm newTime={gotATime} />
@@ -37,13 +45,13 @@ export default function Home() {
 }
 
 const ScWrapper = styled.div`
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   position: relative;
 `;
 const ScMain = styled.main`
-  width: 560px;
+  width: 640px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
