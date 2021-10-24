@@ -38,6 +38,8 @@ export default function Home() {
         <ScTitle>Enter your time!</ScTitle>
         <TimeForm newTime={gotATime} />
         <TimeStamps dateTime={dateTime} />
+
+        <ScCopyright>Made by <a href="https://niklaspeterson.com">Niklas Peterson</a></ScCopyright>
       </ScMain>
     </ScWrapper>
   </>
@@ -63,4 +65,15 @@ const ScTitle = styled.h1`
   font-size: 32px;
   font-family: 'Inter Extra Light';
   text-align: center;
+`;
+
+const ScCopyright = styled.small`
+  text-align:center;
+  margin-top: 24px;
+  font-size: 14px;
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
 `;
