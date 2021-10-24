@@ -67,6 +67,9 @@ const ScButton = styled.button`
   text-transform: uppercase;
 	box-shadow: none;
 	border: none;
+  @media (max-width: 812px) {
+    height: 48px;
+  }
   :hover {
     cursor: pointer;
       opacity: 0.64;
