@@ -32,18 +32,14 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --color-background: #fafafa;
     --color-text: #1e2024;
-
-    --color-modal-background: #fafafa;
-    --color-moda-text: #333;
+    --color-secondary: #eee;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --color-background: #1e2024;
       --color-text: #fafafa;
-
-      --color-modal-background: #333;
-      --color-moda-text: #fafafa;
+      --color-secondary: #161b22;
     }
   }
 `

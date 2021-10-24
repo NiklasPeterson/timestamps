@@ -18,7 +18,7 @@ const ScResultRow = styled.div`
   display: flex;
   margin-bottom: 16px;
   align-items: center;
-  background:#161b22;
+  background:var(--color-secondary);
   padding: 8px 16px;
   border-radius: 8px;
 `;
@@ -27,5 +27,5 @@ const ScResultColumn = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  padding: 0 4px;
+  padding: 04px;
 `;
