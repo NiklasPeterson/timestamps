@@ -13,7 +13,7 @@ const TimeForm = props => {
   }, [date, time]);
 
   return (
-    <div>
+    <ScTimeForm>
         <ScDatepicker
           label="Date"
           type="date"
@@ -28,12 +28,16 @@ const TimeForm = props => {
           defaultValue={ time }
           InputLabelProps={{ shrink: true }}
         />
-    </div>
+    </ScTimeForm>
   );
 
 }
 
 export default TimeForm;
+
+const ScTimeForm = styled.div`
+  text-align:center;
+`; 
 
 const ScDatepicker = styled.input`
 	background: var(--color-background);
@@ -42,7 +46,7 @@ const ScDatepicker = styled.input`
 	box-shadow: none;
 	padding: 5px;
 	border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 
 &:first-child {
   border-radius: 4px 0 0 4px;

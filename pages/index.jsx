@@ -55,9 +55,12 @@ const ScMain = styled.main`
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 24px;
 `;
 
 const ScTitle = styled.h1`
   font-size: 32px;
   font-family: 'Inter Extra Light';
+  text-align: center;
 `;
