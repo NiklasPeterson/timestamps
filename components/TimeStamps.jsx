@@ -49,10 +49,10 @@ const TimeStamps = props => {
         <CodeGroup label="Short Time" value={`<t:${timestamp}:t>`} />
       </ResultRow>
 
-      <ResultRow>
+      {/* <ResultRow>
         <span>{moment(props.dateTime).format('Ltimestamp')}</span>
         <CodeGroup label="Long Time" value={`<t:${timestamp}:T>`} />
-      </ResultRow>
+      </ResultRow> */}
 
       <ResultRow>
         <span>{moment(props.dateTime).fromNow()}</span>

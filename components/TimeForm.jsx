@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import moment from "moment";
 
 const TimeForm = props => {
@@ -12,27 +13,46 @@ const TimeForm = props => {
   }, [date, time]);
 
   return (
-    <div style={{padding: "20px"}}>
-      <div style={{display: "flex", justifyContent: "center"}}>
-          <input
-            label="Date"
-            type="date"
-            onChange={ e => setDate(e.target.value) }
-            defaultValue={ date }
-            InputLabelProps={{ shrink: true }}
-          />
-        
-          <input
-            label="Time"
-            type="time"
-            onChange={ e => setTime(e.target.value) }
-            defaultValue={ time }
-            InputLabelProps={{ shrink: true }}
-          />
-      </div>
+    <div>
+        <ScDatepicker
+          label="Date"
+          type="date"
+          onChange={ e => setDate(e.target.value) }
+          defaultValue={ date }
+          InputLabelProps={{ shrink: true }}
+        />
+        <ScDatepicker
+          label="Time"
+          type="time"
+          onChange={ e => setTime(e.target.value) }
+          defaultValue={ time }
+          InputLabelProps={{ shrink: true }}
+        />
     </div>
   );
 
 }
 
 export default TimeForm;
+
+const ScDatepicker = styled.input`
+	background: var(--color-background);
+  color: var(--color-text);
+	border: 2px solid var(--color-text);
+	box-shadow: none;
+	padding: 5px;
+	border-radius: 4px;
+  margin-bottom: 16px;
+
+&:first-child {
+  border-radius: 4px 0 0 4px;
+  margin-right: -2.5px;
+  border-right: 0;
+}
+
+&:last-child {
+  margin-left: -2.5px;
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+}
+`;

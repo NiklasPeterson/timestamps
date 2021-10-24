@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
+import styled from 'styled-components';
 import TimeForm from '../components/TimeForm';
 import TimeStamps from '../components/TimeStamps';
-import Title from '../components/Title'
 
 export default function Home() {
   const [dateTime, setDateTime] = useState({});
@@ -25,11 +25,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <main>
-      <Title>Enter your time!</Title>
-      <TimeForm newTime={gotATime} />
-      <TimeStamps dateTime={dateTime} />
-    </main>
+    <ScWrapper>
+      <ScMain>
+        <ScTitle>Enter your time!</ScTitle>
+        <TimeForm newTime={gotATime} />
+        <TimeStamps dateTime={dateTime} />
+      </ScMain>
+    </ScWrapper>
   </>
   )
 }
+
+const ScWrapper = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  position: relative;
+`;
+const ScMain = styled.main`
+  width: 560px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ScTitle = styled.h1`
+  font-size: 32px;
+  font-family: 'Inter Extra Light';
+`;
