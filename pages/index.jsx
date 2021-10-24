@@ -39,7 +39,7 @@ export default function Home() {
         <Datepicker newTime={gotATime} />
         <Results dateTime={dateTime} />
 
-        <ScCopyright>Made by <a href="https://niklaspeterson.com">Niklas Peterson</a></ScCopyright>
+        <ScCopyright>Made by <a href="https://twitter.com/niklas_peterson">Niklas Peterson</a></ScCopyright>
       </ScMain>
     </ScWrapper>
   </>
