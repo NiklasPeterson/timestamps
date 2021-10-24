@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --color-background: #1e2024;
       --color-text: #fafafa;
-      --color-secondary: #161b22;
+      --color-secondary: #121212;
     }
   }
 `
