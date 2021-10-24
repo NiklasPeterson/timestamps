@@ -13,12 +13,6 @@ const TimeStamps = props => {
 
   return (
     <>
-
-      <ResultRow>
-        <strong>Format</strong>
-        <strong>Timestamp</strong>
-      </ResultRow>
-
       <ResultRow>
         <label>{moment(props.dateTime).format('LLL')}</label>
         <CodeGroup label="Default Date Time" value={`<t:${timestamp}>`} />

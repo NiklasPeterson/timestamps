@@ -25,7 +25,13 @@ const ScResultRow = styled.div`
 
 const ScResultColumn = styled.div`
   display: flex;
-  flex: 1;
-  flex-direction: row;
-  padding: 04px;
+  flex: 1.5;
+  padding: 4px;
+
+  :last-child {
+    flex: 1;
+    @media (max-width: 812px) {
+      flex: 0;
+    }
+  }
 `;

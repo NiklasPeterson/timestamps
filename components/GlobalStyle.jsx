@@ -17,6 +17,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 
+  
+  :root {
+    --color-background: #fafafa;
+    --color-text: #1e2024;
+    --color-secondary: #eee;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: #1e2024;
+      --color-text: #fafafa;
+      --color-secondary: #121212;
+    }
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -27,19 +42,5 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-  }
-
-  :root {
-    --color-background: #fafafa;
-    --color-text: #1e2024;
-    --color-secondary: #eee;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-background: #1e2024;
-      --color-text: #fafafa;
-      --color-secondary: #121212;
-    }
   }
 `

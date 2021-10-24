@@ -44,7 +44,8 @@ const ScDatepicker = styled.input`
   color: var(--color-text);
 	border: 2px solid var(--color-text);
 	box-shadow: none;
-	padding: 5px;
+	padding: 8px;
+  font-size: 14px;
 	border-radius: 4px;
   margin-bottom: 24px;
 
