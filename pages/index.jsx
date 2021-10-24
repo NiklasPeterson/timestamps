@@ -3,8 +3,8 @@ import Head from 'next/head'
 import styled from 'styled-components';
 import { Toaster } from 'react-hot-toast';
 
-import TimeForm from '../components/TimeForm';
-import TimeStamps from '../components/TimeStamps';
+import Datepicker from '../components/Datepicker';
+import Results from '../components/Results';
 
 export default function Home() {
   const [dateTime, setDateTime] = useState({});
@@ -23,7 +23,7 @@ export default function Home() {
   <>
     <Head>
         <title>Discord Timestamp Formatter</title>
-        <meta name="description" content="Little app that helps you create Timestamps for Discord." />
+        <meta name="description" content="Little app that helps you create Results for Discord." />
         <link rel="icon" href="/favicon.ico" />
     </Head>
 
@@ -36,8 +36,8 @@ export default function Home() {
       </div>
       <ScMain>
         <ScTitle>Enter your time!</ScTitle>
-        <TimeForm newTime={gotATime} />
-        <TimeStamps dateTime={dateTime} />
+        <Datepicker newTime={gotATime} />
+        <Results dateTime={dateTime} />
 
         <ScCopyright>Made by <a href="https://niklaspeterson.com">Niklas Peterson</a></ScCopyright>
       </ScMain>
@@ -58,7 +58,7 @@ const ScMain = styled.main`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 24px;
+  padding: 40px 24px;
 `;
 
 const ScTitle = styled.h1`

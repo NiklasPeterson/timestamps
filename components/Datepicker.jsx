@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import moment from "moment";
 
-const TimeForm = props => {
+const Datepicker = props => {
 
   const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
   const [time, setTime] = useState(moment(new Date()).format('HH:mm'));
@@ -13,33 +13,33 @@ const TimeForm = props => {
   }, [date, time]);
 
   return (
-    <ScTimeForm>
-        <ScDatepicker
+    <ScDatepicker>
+        <ScInput
           label="Date"
           type="date"
           onChange={ e => setDate(e.target.value) }
           defaultValue={ date }
           InputLabelProps={{ shrink: true }}
         />
-        <ScDatepicker
+        <ScInput
           label="Time"
           type="time"
           onChange={ e => setTime(e.target.value) }
           defaultValue={ time }
           InputLabelProps={{ shrink: true }}
         />
-    </ScTimeForm>
+    </ScDatepicker>
   );
 
 }
 
-export default TimeForm;
+export default Datepicker;
 
-const ScTimeForm = styled.div`
+const ScDatepicker = styled.div`
   text-align:center;
 `; 
 
-const ScDatepicker = styled.input`
+const ScInput = styled.input`
 	background: var(--color-background);
   color: var(--color-text);
 	border: 2px solid var(--color-text);

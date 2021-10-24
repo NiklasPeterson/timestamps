@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
-const ResultRow = props => {
+const Row = props => {
   return (
-    <ScResultRow>
+    <ScRow>
         {props.children.map( (child, i) => 
-            <ScResultColumn key={i} item>
+            <ScColumn key={i} item>
               {child}
-            </ScResultColumn>
+            </ScColumn>
         )}
-    </ScResultRow>
+    </ScRow>
   );
 }
 
-export default ResultRow;
+export default Row;
 
-const ScResultRow = styled.div`
+const ScRow = styled.div`
   display: flex;
   margin-bottom: 16px;
   align-items: center;
@@ -23,7 +23,7 @@ const ScResultRow = styled.div`
   border-radius: 8px;
 `;
 
-const ScResultColumn = styled.div`
+const ScColumn = styled.div`
   display: flex;
   flex: 1.5;
   padding: 4px;
