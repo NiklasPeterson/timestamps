@@ -13,10 +13,6 @@ const Results = props => {
 
   return (
     <>
-      <Row>
-        <label>{moment(props.dateTime).format('LLL')}</label>
-        <CodeGroup label="Default Date Time" value={`<t:${timestamp}>`} />
-      </Row>
 
       <Row>
         <label>{moment(props.dateTime).format('LLL')}</label>
