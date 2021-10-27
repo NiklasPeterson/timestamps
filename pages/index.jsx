@@ -23,7 +23,7 @@ export default function Home() {
   <>
     <Head>
         <title>Discord Timestamp Formatter</title>
-        <meta name="description" content="Little app that helps you create Results for Discord." />
+        <meta name="description" content="Little app that helps you create Timestamps for Discord." />
         <link rel="icon" href="/favicon.ico" />
     </Head>
 
