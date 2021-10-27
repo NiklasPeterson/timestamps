@@ -23,8 +23,15 @@ export default function Home() {
   <>
     <Head>
         <title>Discord Timestamp Formatter</title>
-        <meta name="description" content="Little app that helps you create Timestamps for Discord." />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Little app that helps you create timestamps for Discord. Made by Niklas Peterson" />
+        <meta name="author" content="Niklas Peterson" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#1e2024" />
+        <meta name="theme-color" content="#1e2024" />
     </Head>
 
     <ScWrapper>
