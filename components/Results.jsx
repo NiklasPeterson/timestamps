@@ -40,6 +40,11 @@ const Results = props => {
       </Row>
 
       <Row>
+        <label>{moment(props.dateTime).format('LTS')}</label>
+        <CodeGroup label="Long Time" value={`<t:${timestamp}:T>`} />
+      </Row>
+
+      <Row>
         <label>{moment(props.dateTime).fromNow()}</label>
         <CodeGroup label="Relative Time" value={`<t:${timestamp}:R>`} />
       </Row>
