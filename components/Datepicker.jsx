@@ -13,51 +13,60 @@ const Datepicker = props => {
   }, [date, time]);
 
   return (
-    <ScDatepicker>
-        <ScInput
-          label="Date"
-          type="date"
-          onChange={ e => setDate(e.target.value) }
-          defaultValue={ date }
-          InputLabelProps={{ shrink: true }}
-        />
-        <ScInput
-          label="Time"
-          type="time"
-          onChange={ e => setTime(e.target.value) }
-          defaultValue={ time }
-          InputLabelProps={{ shrink: true }}
-        />
-    </ScDatepicker>
+    <ScDateWrapper>
+      <ScDatepicker>
+          <ScInput
+            label="Date"
+            type="date"
+            onChange={ e => setDate(e.target.value) }
+            defaultValue={ date }
+            InputLabelProps={{ shrink: true }}
+          />
+          <ScInput
+            label="Time"
+            type="time"
+            onChange={ e => setTime(e.target.value) }
+            defaultValue={ time }
+            InputLabelProps={{ shrink: true }}
+          />
+      </ScDatepicker>
+    </ScDateWrapper>
   );
 
 }
 
 export default Datepicker;
 
+const ScDateWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const ScDatepicker = styled.div`
   text-align:center;
+  border: 2px solid var(--color-text);
+  margin-bottom: 24px;
+  border-radius: 4px;
 `; 
 
 const ScInput = styled.input`
 	background: var(--color-background);
   color: var(--color-text);
-	border: 2px solid var(--color-text);
+	// border: 2px solid var(--color-text);
 	box-shadow: none;
 	padding: 8px;
   font-size: 14px;
-	border-radius: 4px;
-  margin-bottom: 24px;
+  margin: 0;
 
 &:first-child {
-  border-radius: 4px 0 0 4px;
-  margin-right: -2.5px;
-  border-right: 0;
+  // border-radius: 4px 0 0 4px;
+  // margin-right: -2.5px;
+  // border-right: 0;
 }
 
 &:last-child {
-  margin-left: -2.5px;
-  border-radius: 0 4px 4px 0;
-  border-left: 0;
+  // margin-left: -2.5px;
+  // border-radius: 0 4px 4px 0;
+  // border-left: 0;
 }
 `;
