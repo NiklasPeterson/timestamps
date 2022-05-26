@@ -40,32 +40,21 @@ export default Datepicker;
 const ScDateWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 const ScDatepicker = styled.div`
   border: 2px solid var(--color-text);
   margin-bottom: 24px;
   border-radius: 4px;
+  align-items: center;
+  display: flex;
 `; 
 
 const ScInput = styled.input`
 	background: var(--color-background);
   color: var(--color-text);
-  border: 0;
-	box-shadow: none;
 	padding: 8px;
   font-size: 14px;
+	box-shadow: none;
+  border: 0;
   margin: 0;
-
-&:first-child {
-  // border-radius: 4px 0 0 4px;
-  // margin-right: -2.5px;
-  // border-right: 0;
-}
-
-&:last-child {
-  // margin-left: -2.5px;
-  // border-radius: 0 4px 4px 0;
-  // border-left: 0;
-}
 `;
