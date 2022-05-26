@@ -52,9 +52,17 @@ const ScDatepicker = styled.div`
 const ScInput = styled.input`
 	background: var(--color-background);
   color: var(--color-text);
-	padding: 8px;
+	padding: 12px;
   font-size: 14px;
 	box-shadow: none;
   border: 0;
   margin: 0;
+
+  &:first-child {
+  padding-right: 4px;
+}
+
+&:last-child {
+  padding-left: 4px;
+}
 `;
