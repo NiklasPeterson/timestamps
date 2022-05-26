@@ -43,7 +43,6 @@ const ScDateWrapper = styled.div`
   align-items: center;
 `;
 const ScDatepicker = styled.div`
-  text-align:center;
   border: 2px solid var(--color-text);
   margin-bottom: 24px;
   border-radius: 4px;
@@ -52,7 +51,7 @@ const ScDatepicker = styled.div`
 const ScInput = styled.input`
 	background: var(--color-background);
   color: var(--color-text);
-	// border: 2px solid var(--color-text);
+  border: 0;
 	box-shadow: none;
 	padding: 8px;
   font-size: 14px;
