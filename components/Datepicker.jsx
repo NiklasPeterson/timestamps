@@ -47,22 +47,23 @@ const ScDatepicker = styled.div`
   border-radius: 4px;
   align-items: center;
   display: flex;
+  padding: 8px;
 `; 
 
 const ScInput = styled.input`
 	background: var(--color-background);
   color: var(--color-text);
-	padding: 12px;
   font-size: 14px;
 	box-shadow: none;
+  padding: 0;
   border: 0;
   margin: 0;
 
   &:first-child {
   padding-right: 4px;
-}
+  }
 
-&:last-child {
-  padding-left: 4px;
-}
+  &:last-child {
+    padding-left: 4px;
+  }
 `;
