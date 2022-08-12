@@ -58,6 +58,10 @@ const ScInput = styled.input`
   padding: 0;
   border: 0;
   margin: 0;
+  
+  ::-webkit-calendar-picker-indicator {
+    filter: var(--color-date-icon);
+}
 
   &:first-child {
   padding-right: 4px;

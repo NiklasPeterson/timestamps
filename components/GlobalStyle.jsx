@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-background: #fafafa;
     --color-text: #1e2024;
     --color-secondary: #eee;
+    --color-date-icon: invert(0);
   }
   
   @media (prefers-color-scheme: dark) {
@@ -29,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
       --color-background: #1e2024;
       --color-text: #fafafa;
       --color-secondary: #121212;
+      --color-date-icon: invert(1);
     }
   }
 
