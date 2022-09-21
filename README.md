@@ -29,3 +29,5 @@ yarn dev
 
 - [Next.js](https://nextjs.org/)
 - [Styled-components](https://www.styled-components.com)
+- [Moment](https://momentjs.com)
+- [React Hot Toast](https://react-hot-toast.com)
