@@ -48,8 +48,7 @@ export default function Home() {
 
         <ScCopyright>Made by <a href="https://twitter.com/niklas_peterson">Niklas Peterson</a></ScCopyright>
         <ScSponsor>
-        {/* <iframe src="https://github.com/sponsors/NiklasPeterson/button" title="Sponsor NiklasPeterson" height="35" width="116" style={{border: 0}}></iframe> */}
-        <a href="https://www.buymeacoffee.com/Niklaspeterson" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style={{height: 48}} /></a>
+        <a href="https://www.buymeacoffee.com/niklas_peterson" target="_blank"><img src="/bmc-button.svg" alt="Buy Me A Coffee" style={{height: 48}} /></a>
         </ScSponsor>
       </ScMain>
     </ScWrapper>
@@ -93,4 +92,8 @@ const ScSponsor = styled.div`
   display:flex;
   justify-content: center;
   margin-top: 8px;
+  
+  img {
+    cursor: pointer;
+  }
 `;
