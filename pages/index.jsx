@@ -48,7 +48,7 @@ export default function Home() {
 
         <ScCopyright>Made by <a href="https://twitter.com/niklas_peterson">Niklas Peterson</a></ScCopyright>
         <ScSponsor>
-        <a href="https://www.buymeacoffee.com/niklas_peterson" target="_blank"><img src="/bmc-button.svg" alt="Buy Me A Coffee" style={{height: 48}} /></a>
+        <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank"><img src="/bmc-button.svg" alt="Buy Me A Coffee" style={{height: 48}} /></a>
         </ScSponsor>
       </ScMain>
     </ScWrapper>
