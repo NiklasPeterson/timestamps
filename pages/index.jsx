@@ -47,6 +47,9 @@ export default function Home() {
         <Results dateTime={dateTime} />
 
         <ScCopyright>Made by <a href="https://twitter.com/niklas_peterson">Niklas Peterson</a></ScCopyright>
+        <ScSponsor>
+        <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank"><img src="/bmc-button.svg" alt="Buy Me A Coffee" style={{height: 48}} /></a>
+        </ScSponsor>
       </ScMain>
     </ScWrapper>
   </>
@@ -82,5 +85,15 @@ const ScCopyright = styled.small`
   a {
     color: var(--color-text);
     text-decoration: none;
+  }
+`;
+
+const ScSponsor = styled.div`
+  display:flex;
+  justify-content: center;
+  margin-top: 8px;
+  
+  img {
+    cursor: pointer;
   }
 `;
