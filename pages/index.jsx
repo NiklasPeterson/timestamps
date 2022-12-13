@@ -23,7 +23,7 @@ export default function Home() {
   <>
     <Head>
         <title>Discord Timestamp Generator</title>
-        <meta name="description" content="This little app that helps you generate and format timestamps for Discord. Made by Niklas Peterson" />
+        <meta name="description" content="Discord Timestamp Generator, is an app that helps you to generate and format timestamps for Discord. Made by Niklas Peterson" />
         <meta name="author" content="Niklas Peterson" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
