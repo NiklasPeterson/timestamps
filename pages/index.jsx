@@ -22,8 +22,8 @@ export default function Home() {
   return (
   <>
     <Head>
-        <title>Discord Timestamp Formatter</title>
-        <meta name="description" content="Little app that helps you create timestamps for Discord. Made by Niklas Peterson" />
+        <title>Discord Timestamp Generator</title>
+        <meta name="description" content="This little app that helps you generate and format timestamps for Discord. Made by Niklas Peterson" />
         <meta name="author" content="Niklas Peterson" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -42,7 +42,9 @@ export default function Home() {
         />
       </div>
       <ScMain>
-        <ScTitle>Enter your time!</ScTitle>
+        <ScTitle>Discord Timestamp Generator</ScTitle>
+        <ScDescription>This little app helps you generate and format timestamps for Discord.</ScDescription>
+        <ScAction>Enter your time!</ScAction>
         <Datepicker newTime={gotATime} />
         <Results dateTime={dateTime} />
 
@@ -73,6 +75,19 @@ const ScMain = styled.main`
 
 const ScTitle = styled.h1`
   font-size: 32px;
+  font-family: 'Inter Extra Light';
+  text-align: center;
+  margin-bottom: 8px;
+`;
+
+const ScDescription = styled.p`
+  /* font-family: 'Inter Extra Light'; */
+  text-align: center;
+  margin-top: 0;
+`;
+
+const ScAction = styled.p`
+  font-size: 20px;
   font-family: 'Inter Extra Light';
   text-align: center;
 `;
