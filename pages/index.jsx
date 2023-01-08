@@ -9,7 +9,7 @@ import Results from '../components/Results';
 export default function Home() {
   const [dateTime, setDateTime] = useState({});
 
-  useEffect( () => {
+  useEffect(() => {
     const date = new Date();
     date.setSeconds(0);
     setDateTime(date);
@@ -18,13 +18,17 @@ export default function Home() {
   const gotATime = dateTime => {
     setDateTime(dateTime);
   }
-  
+
   return (
-  <>
-    <Head>
-        <title>Discord Timestamp Generator</title>
-        <meta name="description" content="Discord Timestamp Generator, is an app that helps you to generate and format timestamps for Discord. Made by Niklas Peterson" />
-        <meta name="author" content="Niklas Peterson" />
+    <>
+      <Head>
+        <title>Timestamps - Timestamp Generator for Discord</title>
+        <meta name="description" content="Timestamps.app is a timestamp Generator for Discord, is an app that helps you to generate and format timestamps for Discord. Made by Niklas Peterson" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover, shrink-to-fit=no" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta property="og:title" content="Timestamps - A Timestamp Generator for Discord" key="title" />
+        <meta property="og:description" content="Timestamps.app is a timestamp Generator for Discord, is an app that helps you to generate and format timestamps for Discord. Made by Niklas Peterson" key="description" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -32,29 +36,29 @@ export default function Home() {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="msapplication-TileColor" content="#1e2024" />
         <meta name="theme-color" content="#1e2024" />
-    </Head>
+      </Head>
 
-    <ScWrapper>
-      <div>
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-        />
-      </div>
-      <ScMain>
-        <ScTitle>Discord Timestamp Generator</ScTitle>
-        <ScDescription>This little app helps you generate and format timestamps for Discord.</ScDescription>
-        <ScAction>Enter your time!</ScAction>
-        <Datepicker newTime={gotATime} />
-        <Results dateTime={dateTime} />
+      <ScWrapper>
+        <div>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
+        </div>
+        <ScMain>
+          <ScTitle>Discord Timestamp Generator</ScTitle>
+          <ScDescription>This little app helps you generate and format timestamps for Discord.</ScDescription>
+          <ScAction>Enter your time!</ScAction>
+          <Datepicker newTime={gotATime} />
+          <Results dateTime={dateTime} />
 
-        <ScCopyright>Made by <a href="https://twitter.com/niklas_peterson">Niklas Peterson</a></ScCopyright>
-        <ScSponsor>
-        <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank"><img src="/bmc-button.svg" alt="Buy Me A Coffee" style={{height: 48}} /></a>
-        </ScSponsor>
-      </ScMain>
-    </ScWrapper>
-  </>
+          <ScCopyright>Made by <a href="https://twitter.com/niklas_peterson">Niklas Peterson</a></ScCopyright>
+          <ScSponsor>
+            <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank"><img src="/bmc-button.svg" alt="Buy Me A Coffee" style={{ height: 48 }} /></a>
+          </ScSponsor>
+        </ScMain>
+      </ScWrapper>
+    </>
   )
 }
 
