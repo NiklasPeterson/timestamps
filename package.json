@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.0",
