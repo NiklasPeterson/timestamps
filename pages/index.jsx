@@ -22,13 +22,25 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Timestamps - Timestamp Generator for Discord</title>
-        <meta name="description" content="Timestamps.app is an app that helps you to generate and format timestamps for Discord. Made by Niklas Peterson" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Generate Timestamps for Discord and More | timestamps.app"</title>
         <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover, shrink-to-fit=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Generate timestamps for Discord and other platforms easily with timestamps.app." />
         <meta name="HandheldFriendly" content="true" />
-        <meta property="og:title" content="Timestamps - A Timestamp Generator for Discord" key="title" />
-        <meta property="og:description" content="Timestamps.app is an app that helps you to generate and format timestamps for Discord. Made by Niklas Peterson" key="description" />
+        
+        <link rel="canonical" href="https://timestamps.app"/>
+        
+        <meta property="og:title" content="Generate Timestamps for Discord and More | timestamps.app" />
+        <meta property="og:description" content="Generate timestamps for Discord and other platforms easily with timestamps.app."/>
+        <meta property="og:url" content="https://timestamps.app" />
+        <meta property="og:image" content="https://timestamps.app/images/og-image.png"/>
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Generate Timestamps for Discord and More | timestamps.app"/>
+        <meta name="twitter:description" content="Generate timestamps for Discord and other platforms easily with timestamps.app."/>
+        <meta name="twitter:image" content="https://timestamps.app/images/twitter-card-image.jpg"/>
+        <meta name="twitter:site" content="@app_timestamps"/>
+
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
