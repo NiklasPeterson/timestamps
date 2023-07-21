@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Children } from 'react';
 
 const Row = props => {
   return (
     <ScRow>
-        {props.children.map( (child, i) => 
+        {Children.map(props.children, (child, i) => 
             <ScColumn key={i} item>
               {child}
             </ScColumn>

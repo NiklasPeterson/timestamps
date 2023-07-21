@@ -19,9 +19,8 @@ const Timestamp = props => {
         <ScInput 
         label={props.label}
         value={props.value}
-        readOnly 
         variant="outlined"
-        readonly="true"
+        readOnly 
         >
       </ScInput>
       <ScButton onClick={copyText}>
