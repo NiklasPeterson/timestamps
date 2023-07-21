@@ -24,7 +24,7 @@ export default function Home() {
       <Head>
         <title>Generate Timestamps for Discord and More | timestamps.app"</title>
         <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover, shrink-to-fit=no" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content="Generate timestamps for Discord and other platforms easily with timestamps.app." />
         <meta name="HandheldFriendly" content="true" />
         
