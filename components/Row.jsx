@@ -28,7 +28,7 @@ const ScColumn = styled.div`
   flex: 1.5;
   padding: 4px;
 
-  :last-child {
+  &:last-child {
     flex: 1;
     @media (max-width: 812px) {
       flex: 0;
