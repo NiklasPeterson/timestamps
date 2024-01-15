@@ -68,7 +68,8 @@ export default function Home() {
         }}>
           <ScCardContainer>
               <ScCard href='https://apps.apple.com/app/titls/id1579078964' target='_blank'>
-                <div style={{ display: "inline-flex", gap: 16, alignItems: "center", padding: 8}}>
+                <div style={{ display: "inline-flex", gap: 16, alignItems: "center", padding: 8, justifyContent: "space-between", width: "100%",boxSizing: "border-box"}}>
+                <div style={{display: "flex", gap: 16}}>
                   <div style={{ position: "relative", width: 32, height: 32, minWidth: 32, borderRadius: "8px", overflow: "hidden" }}>
                     <Image className='rounded-3xl' src="/images/titls.png" alt="App icon of Titls iOS app" fill={true} />
                   </div>
@@ -77,19 +78,22 @@ export default function Home() {
                     <div style={{ fontSize: 14, fontWeight: 500, lineHeight: "20px", }}>Titls</div>
                     <div style={{ fontSize: 12, lineHeight: "16px" }}>Organize & categorize your home screens.</div>
                   </div>
+                  </div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width={20} height={20}><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" /></svg>
                 </div>
               </ScCard>
 
               <ScCard href='https://hydrify.app' target='_blank'>
-                <div style={{ display: "inline-flex", gap: 16, alignItems: "center", padding: 8}}>
-                  <div style={{ position: "relative", width: 32, height: 32, minWidth: 32, borderRadius: "8px", overflow: "hidden" }}>
+                <div style={{ display: "inline-flex", gap: 16, alignItems: "center", padding: 8, justifyContent: "space-between", width: "100%",boxSizing: "border-box"}}>
+                  <div style={{display: "flex", gap: 16}}>
+                    <div style={{ position: "relative", width: 32, height: 32, minWidth: 32, borderRadius: "8px", overflow: "hidden" }}>
                     <Image className='rounded-3xl' src="/images/hydrify.png" alt="App icon of Hydrify iOS app" fill={true} />
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <div style={{ fontSize: 14, fontWeight: 500, lineHeight: "20px", }}>Hydrify</div>
                     <div style={{ fontSize: 12, lineHeight: "16px", color: "var(--color-muted)" }}>Your optimal iOS hydration companion.</div>
+                  </div>
                   </div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width={20} height={20}><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" /></svg>
                 </div>
@@ -217,6 +221,14 @@ const ScCardContainer = styled.div`
   flex-direction: column;
   }
 
+`;
+
+
+const ScSpacer = styled.div`
+@media (max-width: 812px) {
+  display:flex;
+  flex: 1;
+  }
 `;
 
 const ScCard = styled.a`
