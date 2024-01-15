@@ -5,7 +5,7 @@ const Row = props => {
   return (
     <ScRow>
         {Children.map(props.children, (child, i) => 
-            <ScColumn key={i} item>
+            <ScColumn key={i}>
               {child}
             </ScColumn>
         )}
@@ -19,7 +19,8 @@ const ScRow = styled.div`
   display: flex;
   margin-bottom: 16px;
   align-items: center;
-  background:var(--color-secondary);
+
+  background: var(--color-secondary);
   padding: 8px 16px;
   border-radius: 8px;
 `;
