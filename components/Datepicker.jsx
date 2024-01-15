@@ -20,14 +20,14 @@ const Datepicker = props => {
             type="date"
             onChange={ e => setDate(e.target.value) }
             defaultValue={ date }
-            InputLabelProps={{ shrink: true }}
+            inputlabelprops={{ shrink: true }}
           />
           <ScInput
             label="Time"
             type="time"
             onChange={ e => setTime(e.target.value) }
             defaultValue={ time }
-            InputLabelProps={{ shrink: true }}
+            inputlabelprops={{ shrink: true }}
           />
       </ScDatepicker>
     </ScDateWrapper>
@@ -42,8 +42,7 @@ const ScDateWrapper = styled.div`
   justify-content: center;
 `;
 const ScDatepicker = styled.div`
-  border: 2px solid var(--color-text);
-  margin-bottom: 24px;
+  border: 1px solid var(--color-text);
   border-radius: 4px;
   align-items: center;
   display: flex;

@@ -53,7 +53,7 @@ const ScInput = styled.input`
   font-size: 16px;
   width: 160px;
   pointer-events: none;
-
+  
   @media (max-width: 812px) {
     display: none;
   }
