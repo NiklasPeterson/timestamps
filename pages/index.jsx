@@ -214,7 +214,7 @@ const ScCardContainer = styled.div`
   box-sizing: border-box;
 
 @media (max-width: 812px) {
-    position: relative;
+  flex-direction: column;
   }
 
 `;
