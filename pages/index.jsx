@@ -59,44 +59,38 @@ export default function Home() {
           />
         </div>
 
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%"
-        }}>
+        <ScInner>
           <ScCardContainer>
               <ScCard href='https://apps.apple.com/app/titls/id1579078964' target='_blank'>
-                <div style={{ display: "inline-flex", gap: 16, alignItems: "center", padding: 8, justifyContent: "space-between", width: "100%",boxSizing: "border-box"}}>
-                <div style={{display: "flex", gap: 16}}>
-                  <div style={{ position: "relative", width: 32, height: 32, minWidth: 32, borderRadius: "8px", overflow: "hidden" }}>
+                <ScCardInner>
+                <ScCardInnerWrapper>
+                  <ScImageWrapper>
                     <Image className='rounded-3xl' src="/images/titls.png" alt="App icon of Titls iOS app" fill={true} />
-                  </div>
+                  </ScImageWrapper>
 
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <div style={{ fontSize: 14, fontWeight: 500, lineHeight: "20px", }}>Titls</div>
-                    <div style={{ fontSize: 12, lineHeight: "16px" }}>Organize & categorize your home screens.</div>
-                  </div>
-                  </div>
+                  <ScCardText>
+                    <ScCardTitle>Titls</ScCardTitle>
+                    <ScCardDescription>Organize & categorize your home screens.</ScCardDescription>
+                  </ScCardText>
+                  </ScCardInnerWrapper>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width={20} height={20}><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" /></svg>
-                </div>
+                </ScCardInner>
               </ScCard>
 
               <ScCard href='https://hydrify.app' target='_blank'>
-                <div style={{ display: "inline-flex", gap: 16, alignItems: "center", padding: 8, justifyContent: "space-between", width: "100%",boxSizing: "border-box"}}>
-                  <div style={{display: "flex", gap: 16}}>
-                    <div style={{ position: "relative", width: 32, height: 32, minWidth: 32, borderRadius: "8px", overflow: "hidden" }}>
+                <ScCardInner>
+                  <ScCardInnerWrapper>
+                    <ScImageWrapper>
                     <Image className='rounded-3xl' src="/images/hydrify.png" alt="App icon of Hydrify iOS app" fill={true} />
-                  </div>
+                  </ScImageWrapper>
 
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <div style={{ fontSize: 14, fontWeight: 500, lineHeight: "20px", }}>Hydrify</div>
-                    <div style={{ fontSize: 12, lineHeight: "16px", color: "var(--color-muted)" }}>Your optimal iOS hydration companion.</div>
-                  </div>
-                  </div>
+                  <ScCardText>
+                    <ScCardTitle>Hydrify</ScCardTitle>
+                    <ScCardDescription>Your optimal iOS hydration companion.</ScCardDescription>
+                  </ScCardText>
+                  </ScCardInnerWrapper>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width={20} height={20}><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" /></svg>
-                </div>
+                </ScCardInner>
 
               </ScCard>
           </ScCardContainer>
@@ -137,7 +131,7 @@ export default function Home() {
 
           </ScMain>
 
-        </div>
+        </ScInner>
       </ScWrapper>
     </>
   )
@@ -149,6 +143,15 @@ const ScWrapper = styled.div`
   align-items: center;
   position: relative;
 `;
+
+const ScInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
 const ScMain = styled.main`
   width: 640px;
   max-width: 100%;
@@ -223,14 +226,6 @@ const ScCardContainer = styled.div`
 
 `;
 
-
-const ScSpacer = styled.div`
-@media (max-width: 812px) {
-  display:flex;
-  flex: 1;
-  }
-`;
-
 const ScCard = styled.a`
   background: var(--color-card);
   color: var(--color-text);
@@ -246,5 +241,43 @@ const ScCard = styled.a`
   }
 `;
 
+const ScCardInner = styled.div`
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  padding: 8px;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+`;
 
+const ScImageWrapper = styled.div`
+  position: relative;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+`;
 
+const ScCardTitle = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+`;
+
+const ScCardDescription = styled.div`
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-muted);
+`;
+
+const ScCardText = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ScCardInnerWrapper = styled.div`
+  display: flex;
+  gap: 16px;
+`;
