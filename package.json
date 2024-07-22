@@ -15,6 +15,6 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-is": "^18.3.1",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.12"
   }
 }
