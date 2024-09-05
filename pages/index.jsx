@@ -65,7 +65,7 @@ export default function Home() {
                 <ScCardInner>
                 <ScCardInnerWrapper>
                   <ScImageWrapper>
-                    <Image className='rounded-3xl' src="/images/titls.png" alt="App icon of Titls iOS app" fill={true} />
+                    <Image src="/images/titls.png" alt="App icon of Titls iOS app" fill={true} />
                   </ScImageWrapper>
 
                   <ScCardText>
@@ -81,7 +81,7 @@ export default function Home() {
                 <ScCardInner>
                   <ScCardInnerWrapper>
                     <ScImageWrapper>
-                    <Image className='rounded-3xl' src="/images/hydrify.png" alt="App icon of Hydrify iOS app" fill={true} />
+                    <Image src="/images/hydrify.png" alt="App icon of Hydrify iOS app" fill={true} />
                   </ScImageWrapper>
 
                   <ScCardText>
