@@ -1,38 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import moment from "moment";
 
-const Datepicker = props => {
+const Datepicker = ({ newTime }) => {
+  const [date, setDate] = useState(moment().format('YYYY-MM-DD'));
+  const [time, setTime] = useState(moment().format('HH:mm'));
 
-  const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
-  const [time, setTime] = useState(moment(new Date()).format('HH:mm'));
-
-  useEffect( () => {
+  const updateDateTime = useCallback(() => {
     const dateTime = new Date(`${date}T${time}`);
-    props.newTime(dateTime);
-  }, [date, time]);
+    newTime(dateTime);
+  }, [date, time, newTime]);
+
+  useEffect(() => {
+    updateDateTime();
+  }, [updateDateTime]);
 
   return (
     <ScDateWrapper>
       <ScDatepicker>
-          <ScInput
-            label="Date"
-            type="date"
-            onChange={ e => setDate(e.target.value) }
-            defaultValue={ date }
-            inputlabelprops={{ shrink: true }}
-          />
-          <ScInput
-            label="Time"
-            type="time"
-            onChange={ e => setTime(e.target.value) }
-            defaultValue={ time }
-            inputlabelprops={{ shrink: true }}
-          />
+        <ScInput
+          label="Date"
+          type="date"
+          onChange={e => setDate(e.target.value)}
+          value={date}
+          aria-label="Date"
+        />
+        <ScInput
+          label="Time"
+          type="time"
+          onChange={e => setTime(e.target.value)}
+          value={time}
+          aria-label="Time"
+        />
       </ScDatepicker>
     </ScDateWrapper>
   );
-
 }
 
 export default Datepicker;
