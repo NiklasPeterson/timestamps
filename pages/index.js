@@ -112,8 +112,6 @@ export default function Home() {
   )
 }
 
-
-
 const ScWrapper = styled.div`
   display: flex;
   justify-content: center;

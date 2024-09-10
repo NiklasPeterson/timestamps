@@ -21,8 +21,6 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 500;
     src: url("/fonts/Inter-Medium.woff2") format("woff2"); }
-
-
   
   :root {
     --color-background: #fff;
