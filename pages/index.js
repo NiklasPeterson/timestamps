@@ -145,11 +145,12 @@ const ScTitle = styled.h1`
   font-size: 48px;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 `;
 
 const ScDescription = styled.p`
   text-align: center;
+  opacity: 0.8;
   margin-top: 0;
 `;
 
