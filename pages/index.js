@@ -144,6 +144,7 @@ const ScMain = styled.main`
 const ScTitle = styled.h1`
   font-size: 48px;
   font-weight: 400;
+  line-height: 125%;
   text-align: center;
   margin-bottom: 0px;
 `;
