@@ -33,7 +33,7 @@ const ScColumn = styled.div`
   &:last-child {
     flex: 1;
     @media (max-width: 812px) {
-      flex: 0;
+      flex-grow: 0;
     }
   }
 `;
