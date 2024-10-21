@@ -19,6 +19,7 @@ const ScRow = styled.div`
   display: flex;
   margin-bottom: 16px;
   align-items: center;
+  gap: 8px;
 
   background: var(--color-secondary);
   padding: 8px 16px;
