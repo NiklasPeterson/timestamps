@@ -31,9 +31,6 @@ const ScColumn = styled.div`
   padding: 4px;
 
   &:last-child {
-    flex: 1;
-    @media (max-width: 812px) {
-      flex-grow: 0;
-    }
+    flex: 0;
   }
 `;
