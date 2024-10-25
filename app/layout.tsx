@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased backgroundPrimary contentPrimary h-screen flex justify-center items-center flex-col`}>
+        className={`${inter.className} antialiased backgroundPrimary contentPrimary h-screen flex flex-col justify-start items-start md:justify-center md:items-center`}>
         {children}
         <Toaster />
       </body>
