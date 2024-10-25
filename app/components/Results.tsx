@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import moment from "moment";
 import Row from "./Row";
-import CodeGroup from './Timestamp';
 
 const FORMATS = [
   { label: "Short Date Time", format: "LLL", code: "f" },
@@ -13,22 +12,22 @@ const FORMATS = [
   { label: "Relative Time", format: "fromNow", code: "R" },
 ];
 
-const Results = ({ dateTime }) => {
+const Results: React.FC<{ dateTime: string }> = ({ dateTime }) => {
   const timestamp = useMemo(() => Math.floor(Date.parse(dateTime) / 1000), [dateTime]);
 
   const renderRows = () => {
     return FORMATS.map(({ label, format, code }) => (
       <Row key={label}>
         <label>{format === "fromNow" ? moment(dateTime).fromNow() : moment(dateTime).format(format)}</label>
-        <CodeGroup label={label} value={`<t:${timestamp}:${code}>`} />
+        <input readOnly type="text" aria-label={label} value={`<t:${timestamp}:${code}>`} className="hidden"/>
       </Row>
     ));
   };
 
   return (
-    <section className="results">
+    <div className="flex flex-col gap-2">
       {renderRows()}
-    </section>
+    </div>
   );
 }
 
