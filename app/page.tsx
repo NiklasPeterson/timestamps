@@ -2,24 +2,20 @@
 
 import React, { useState, useCallback } from 'react'; // Added useState import
 import AppCard from "./components/AppCard";
-import Results from "./components/Results";
+import ResultList from "./components/ResultList";
 import DatePicker from './components/DatePicker';
+import moment, { Moment } from 'moment';
 
 export default function Home() {
-  const [dateTime, setDateTime] = useState(() => {
-    const date = new Date();
-    date.setSeconds(0);
-    return date;
-  });
+  const [dateTime, setDateTime] = useState<Moment>(moment());
 
-  const handleDateTimeChange = useCallback((newDateTime: Date) => {
+  const handleDateTimeChange = useCallback((newDateTime: Moment) => {
     setDateTime(newDateTime);
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center">
-
-      <div className="absolute flex w-full px-4 pt-4 gap-2 justify-end top-0">
+    <>
+      <div className="flex w-full px-4 pt-4 gap-2 justify-end top-0 md:absolute">
         <AppCard
           href='https://apps.apple.com/app/titls/id1579078964'
           imageSrc="/titls.png"
@@ -36,9 +32,9 @@ export default function Home() {
         />
       </div>
 
-      <div className="flex py-40 gap-40 max-w-6xl m-auto">
+      <div className="flex max-w-6xl mx-4 flex-wrap py-10 gap-6 gap md:items-center md:py-40 md:gap-x-40">
         <header className="flex flex-1 flex-col gap-4">
-          <h1 className="text-7xl font-bold">Timestamps Generator</h1>
+          <h1 className="font-bold text-4xl md:text-7xl">Timestamps Generator</h1>
           <div>
             <p className="text-xl">Generate and format <span>[ICON]</span> timestamps for <span>[ICON]</span> Discord and other services that support timestamp format.</p>
             <div>Made by <a href="https://twitter.com/niklas_peterson" target='_blank' rel="noopener noreferrer"><span>[PFP]</span> Niklas Peterson</a></div>
@@ -94,15 +90,13 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex flex-col gap-4 flex-1 p-6 rounded-xl border borderSecondary backdrop-blur backgroundTransparentCard select-none">
+        <main className="flex flex-col gap-4 p-6 rounded-xl border borderSecondary backdrop-blur backgroundTransparentCard select-none h-fit justify-center items-center w-full md:w-auto">
           <DatePicker newTime={handleDateTimeChange} />
-
-          <Results dateTime={dateTime.toISOString()} />
-
+          <ResultList dateTime={dateTime.toISOString()} />
         </main>
 
       </div>
 
-    </div>
+    </>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
+import { Toaster } from 'sonner'
 import "./globals.css";
 
-// If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased backgroundPrimary`}
-      >
+        className={`${inter.className} antialiased backgroundPrimary contentPrimary h-screen flex justify-center items-center flex-col`}>
         {children}
+        <Toaster />
       </body>
     </html>
   );
