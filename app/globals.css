@@ -99,6 +99,19 @@
 
 }
 
+.pt-sa {
+  padding-top: env(safe-area-inset-top);
+}
+.pr-sa {
+  padding-right: env(safe-area-inset-right);
+}
+.pb-sa {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.pl-sa {
+  padding-left: env(safe-area-inset-left);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 
@@ -106,4 +119,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
 }

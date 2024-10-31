@@ -30,7 +30,7 @@ const ResultList: React.FC<{ dateTime: string }> = ({ dateTime }) => {
     <div className="flex flex-col gap-2 w-full">
       {FORMATS.map(({ label, code }, index) => (
         <ResultItem key={label} label={label} value={`<t:${timestamp}:${code}>`}>
-          <label className="w-full px-2 contentSecondary">
+          <label className="w-full block px-2 contentSecondary text-sm md:text-base">
             {formattedDates[index]} {/* Use memoized formatted date */}
           </label>
         </ResultItem>

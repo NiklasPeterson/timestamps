@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from 'next/font/google'
@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: "Timestamps",
   description: "Generate UNIX timestamps for Discord and other platforms easily with timestamps.app",
 };
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: "cover",
+}
 
 export default function RootLayout({
   children,
