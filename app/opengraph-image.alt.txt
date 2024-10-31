@@ -1,0 +1,1 @@
+Generate UNIX timestamps for Discord and other platforms easily with timestamps.app
