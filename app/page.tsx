@@ -6,7 +6,6 @@ import ResultList from "./components/ResultList";
 import DatePicker from './components/DatePicker';
 import moment, { Moment } from 'moment';
 import Image from 'next/image';
-import InputDate from './components/InputDate';
 
 export default function Home() {
   const [dateTime, setDateTime] = useState<Moment>(moment());
