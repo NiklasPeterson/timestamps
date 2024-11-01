@@ -14,17 +14,17 @@ const InputField: React.FC<{
   placeholder: string;
   icon: JSX.Element;
 }> = ({ type, value, onChange, error, ariaLabel, placeholder, icon }) => (
-  <div className={`input w-full ${error ? 'border-red-500' : ''}`}>
+  <label className={`input  w-full ${error ? 'border-red-500' : ''}`}>
     <input
       type={type}
       onChange={e => onChange(e.target.value)}
       value={value}
       aria-label={ariaLabel}
       placeholder={placeholder}
-      className="appearance-none bg-transparent"
+      className="appearance-none bg-transparent cursor-text"
     />
     {icon}
-  </div>
+  </label>
 );
 
 const DatePicker: React.FC<DatePickerProps> = ({ newTime }) => {
