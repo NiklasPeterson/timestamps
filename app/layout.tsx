@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased backgroundPrimary contentPrimary flex flex-col min-h-screen justify-start items-start md:justify-center md:items-center`}>
+        className={`${inter.className} antialiased p-sa contentPrimary flex flex-col min-h-screen justify-start items-start bg-white dark:bg-black bg-no-repeat bg-[url(../public/bg.png)] bg-center bg-cover md:bg-auto  md:justify-center md:items-center`}>
         {children}
         <Analytics />
         <SpeedInsights />
