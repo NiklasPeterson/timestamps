@@ -85,8 +85,9 @@
   }
 
   .primaryButton {
-    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(88, 101, 242, 0.05);
-    @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg bg-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
+    /* box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(0, 0, 0, 0.05); */
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(88, 101, 242, 0.05);
+    @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
   }
 
   .plainButton {
@@ -94,7 +95,7 @@
   }
 
   .input {
-    @apply flex items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary;
+    @apply flex items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
   }
 
 }

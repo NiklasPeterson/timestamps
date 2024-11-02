@@ -19,7 +19,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ children, label, value }) => {
   };
 
   return (
-    <div className="flex items-center backgroundPrimary shadow-sm gap-2 p-2 rounded-lg">
+    <div className="flex items-center backgroundPrimary shadow-sm dark:shadow-none gap-2 p-2 rounded-lg">
       <div className="flex-1">
         {children}
         <input readOnly type="text" aria-label={label} value={value} className="hidden" />
