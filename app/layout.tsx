@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Timestamps",
-  description: "Generate UNIX timestamps for Discord and other platforms easily with timestamps.app",
+  description: "Generate and format UNIX timestamps for Discord and other platforms easily with timestamps.app",
 };
 
 export const viewport: Viewport = {
