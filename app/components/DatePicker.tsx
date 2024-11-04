@@ -14,7 +14,7 @@ const InputField: React.FC<{
   placeholder: string;
   icon: JSX.Element;
 }> = ({ type, value, onChange, error, ariaLabel, placeholder, icon }) => (
-  <label className={`input  w-full ${error ? 'border-red-500' : ''}`}>
+  <label className={`input ${error ? 'border-red-500' : ''}`}>
     <input
       type={type}
       onChange={e => onChange(e.target.value)}

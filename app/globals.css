@@ -96,7 +96,7 @@
   }
 
   .input {
-    @apply relative flex items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
+    @apply relative flex w-full items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
   }
 
   .input::after {
