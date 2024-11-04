@@ -87,13 +87,12 @@
   }
 
   .primaryButton {
-    /* box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(0, 0, 0, 0.05); */
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(88, 101, 242, 0.05);
-    @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
+    @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
   }
 
   .plainButton {
-    @apply relative flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden text-sm font-semibold contentPrimary bg-transparent hover:backgroundPrimary backgroundHoverOverlay;
+    @apply relative flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden select-none text-sm font-semibold contentPrimary bg-transparent hover:backgroundPrimary backgroundHoverOverlay;
   }
 
   .input {
@@ -127,12 +126,15 @@
 .pt-sa {
   padding-top: env(safe-area-inset-top);
 }
+
 .pr-sa {
   padding-right: env(safe-area-inset-right);
 }
+
 .pb-sa {
   padding-bottom: env(safe-area-inset-bottom);
 }
+
 .pl-sa {
   padding-left: env(safe-area-inset-left);
 }
