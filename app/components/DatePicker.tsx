@@ -55,7 +55,7 @@ const DatePicker: React.FC<DatePickerProps> = ({ newTime }) => {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <span className="text-lg font-semibold leading-7">Change date and time to get started</span>
+      <span className="text-md font-semibold leading-7">Change date and time to get started</span>
       <div className="flex gap-2">
         <InputField
           type="date"

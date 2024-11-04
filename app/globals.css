@@ -6,6 +6,7 @@
   --backgroundHover: rgba(0, 0, 0, 2.5%);
   --backgroundInverseHover: rgba(255, 255, 255, 5%);
   --backgroundTransparentCard: rgba(250, 250, 250, 72%);
+  --borderHover: rgba(0, 0, 0, 0.20);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,7 @@
     --backgroundHover: rgba(255, 255, 255, 5%);
     --backgroundInverseHover: rgba(0, 0, 0, 2.5%);
     --backgroundTransparentCard: rgba(39, 39, 42, 72%);
+    --borderHover: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -95,7 +97,22 @@
   }
 
   .input {
-    @apply flex items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
+    @apply relative flex items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
+  }
+
+  .input::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    @apply border-0 rounded-lg pointer-events-none;
+  }
+
+  .input:hover::after {
+    @apply border;
+    border-color: var(--borderHover);
   }
 
 }
