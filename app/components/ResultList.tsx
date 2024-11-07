@@ -8,7 +8,6 @@ const FORMATS = [
   { label: "Short Date", format: "L", code: "d" },
   { label: "Long Date", format: "LL", code: "D" },
   { label: "Short Time", format: "LT", code: "t" },
-  { label: "Long Time", format: "LTS", code: "T" },
   { label: "Relative Time", format: "fromNow", code: "R" },
 ];
 
