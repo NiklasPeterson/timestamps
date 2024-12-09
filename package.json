@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.2",
-    "@vercel/speed-insights": "^1.0.14",
+    "@vercel/speed-insights": "^1.1.0",
     "moment": "^2.30.1",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
