@@ -38,7 +38,7 @@ export default function Home() {
       <main className="flex w-full max-w-6xl px-4 flex-wrap py-14 gap-14 md:justify-between md:items-center md:py-32">
 
         <header className="max-w-lg flex flex-col gap-4 md:gap-6 h-fit md:flex-1">
-          <h1 className="font-semibold text-4xl md:text-7xl">Timestamps Generator</h1>
+          <h1 className="font-semibold text-5xl md:text-7xl">Timestamps Generator</h1>
           <div>
 
             <h2 className='text-xl'>
