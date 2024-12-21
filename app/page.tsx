@@ -98,16 +98,6 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://x.com/AppTimestamps"
-                target='_blank'
-                rel="noopener noreferrer"
-                className="plainButton"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.7512 2.96092H20.818L14.1179 10.6186L22 21.0391H15.8284L10.9946 14.7191L5.46359 21.0391H2.39494L9.5613 12.8483L2 2.96092H8.32828L12.6976 8.73759L17.7512 2.96092ZM16.6748 19.2034H18.3742L7.4049 4.70013H5.58133L16.6748 19.2034Z" className="fill-current" />
-                </svg>
-              </a>
-              <a
                 href='https://github.com/NiklasPeterson/timestamps'
                 target='_blank'
                 rel="noopener noreferrer"
