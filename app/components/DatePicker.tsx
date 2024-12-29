@@ -12,7 +12,7 @@ const InputField: React.FC<{
   error: boolean;
   ariaLabel: string;
   placeholder: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 }> = ({ type, value, onChange, error, ariaLabel, placeholder, icon }) => (
   <label className={`input ${error ? 'border-red-500' : ''}`}>
     <input
