@@ -7,6 +7,7 @@ import DatePicker from './components/DatePicker';
 import moment, { Moment } from 'moment';
 import Image from 'next/image';
 import ServerCount from './components/ServerCount';
+import Analytics from './components/Analytics';
 
 export default function Home() {
   const [dateTime, setDateTime] = useState<Moment>(moment());
@@ -89,6 +90,8 @@ export default function Home() {
 
               <ServerCount />
             </div>
+            
+            <Analytics />
             
             <div className="hidden md:flex gap-1">
               <a
@@ -173,7 +176,6 @@ export default function Home() {
         </div>
         <p className='flex items-center contentSecondary gap-1 text-sm'>Made by <a href="https://x.com/niklas_peterson" className='flex items-center font-semibold contentPrimary' target='_blank' rel="noopener noreferrer">Niklas Peterson</a>
         </p>
-
       </footer>
     </>
   );
