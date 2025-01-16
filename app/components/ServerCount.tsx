@@ -16,9 +16,5 @@ export default function ServerCount() {
 
   if (!serverCount) return null;
 
-  return (
-    <span className="text-sm contentSecondary">
-      Used in {serverCount.toLocaleString()} servers
-    </span>
-  );
+  return serverCount.toLocaleString()
 }
