@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --backgroundHover: rgba(255, 255, 255, 5%);
-    --backgroundInverseHover: rgba(0, 0, 0, 2.5%);
+    --backgroundInverseHover: rgba(0, 0, 0, 5%);
     --backgroundTransparentCard: rgba(39, 39, 42, 72%);
     --borderHover: rgba(255, 255, 255, 0.1);
   }
