@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="flex flex-col gap-4 p-4 md:p-6 rounded-xl border borderSecondary backdrop-blur backgroundTransparentCard shadow dark:shadow-none select-none h-fit justify-center items-center w-full md:w-auto">
+        <div className="flex flex-col gap-4 p-4 md:p-6 rounded-xl border borderSecondary backdrop-blur-sm backgroundTransparentCard shadow-sm dark:shadow-none select-none h-fit justify-center items-center w-full md:w-auto">
           <DatePicker newTime={handleDateTimeChange} />
           <ResultList dateTime={dateTime.toISOString()} />
         </div>

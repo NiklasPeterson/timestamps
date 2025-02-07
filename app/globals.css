@@ -1,66 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --backgroundHover: rgba(0, 0, 0, 2.5%);
-  --backgroundInverseHover: rgba(255, 255, 255, 5%);
-  --backgroundTransparentCard: rgba(250, 250, 250, 72%);
-  --borderHover: rgba(0, 0, 0, 0.20);
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --backgroundHover: rgba(255, 255, 255, 5%);
-    --backgroundInverseHover: rgba(0, 0, 0, 5%);
-    --backgroundTransparentCard: rgba(39, 39, 42, 72%);
-    --borderHover: rgba(255, 255, 255, 0.1);
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-@layer components {
+@utility contentPrimary {
+  @apply text-zinc-950 dark:text-white;
+}
 
-  .contentPrimary {
-    @apply text-zinc-950 dark:text-white;
-  }
+@utility contentSecondary {
+  @apply text-zinc-500 dark:text-zinc-400;
+}
 
-  .contentSecondary {
-    @apply text-zinc-500 dark:text-zinc-400;
-  }
+@utility contentTertiary {
+  @apply text-zinc-950 dark:text-white;
+}
 
-  .contentTertiary {
-    @apply text-zinc-950 dark:text-white;
-  }
+@utility backgroundPrimary {
+  @apply bg-white dark:bg-zinc-900;
+}
 
-  .backgroundPrimary {
-    @apply bg-white dark:bg-zinc-900;
-  }
+@utility backgroundSecondary {
+  @apply bg-zinc-50 dark:bg-zinc-800;
+}
 
-  .backgroundSecondary {
-    @apply bg-zinc-50 dark:bg-zinc-800;
-  }
+@utility backgroundTertiary {
+  @apply bg-zinc-100 dark:bg-zinc-700;
+}
 
-  .backgroundTertiary {
-    @apply bg-zinc-100 dark:bg-zinc-700;
-  }
+@utility backgroundTransparentCard {
+  background-color: var(--backgroundTransparentCard);
+}
 
-  .backgroundTransparentCard {
-    background-color: var(--backgroundTransparentCard);
-  }
+@utility borderPrimary {
+  @apply border-zinc-200 dark:border-zinc-700;
+}
 
-  .borderPrimary {
-    @apply border-zinc-200 dark:border-zinc-700;
-  }
+@utility borderSecondary {
+  @apply border-zinc-100 dark:border-zinc-800;
+}
 
-  .borderSecondary {
-    @apply border-zinc-100 dark:border-zinc-800;
-  }
+@utility borderTertiary {
+  @apply border-zinc-50 dark:border-zinc-950;
+}
 
-  .borderTertiary {
-    @apply border-zinc-50 dark:border-zinc-950;
-  }
-
-  .backgroundHoverOverlay::after {
+@utility backgroundHoverOverlay {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -69,11 +73,13 @@
     left: 0;
   }
 
-  .backgroundHoverOverlay:hover::after {
+  &:hover::after {
     background-color: var(--backgroundHover);
   }
+}
 
-  .backgroundInverseHoverOverlay::after {
+@utility backgroundInverseHoverOverlay {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -82,24 +88,26 @@
     left: 0;
   }
 
-  .backgroundInverseHoverOverlay:hover::after {
+  &:hover::after {
     background-color: var(--backgroundInverseHover);
   }
+}
 
-  .primaryButton {
-    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(88, 101, 242, 0.05);
-    @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
-  }
+@utility primaryButton {
+  box-shadow:
+    0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset,
+    0px 1px 2px 0px rgba(88, 101, 242, 0.05);
+  @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
+}
 
-  .plainButton {
-    @apply relative flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden select-none text-sm font-semibold contentPrimary bg-transparent hover:backgroundPrimary backgroundHoverOverlay;
-  }
+@utility plainButton {
+  @apply relative flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden select-none text-sm font-semibold contentPrimary bg-transparent hover:backgroundPrimary backgroundHoverOverlay;
+}
 
-  .input {
-    @apply relative flex w-full items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
-  }
+@utility input {
+  @apply relative flex w-full items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-xs dark:shadow-none;
 
-  .input::after {
+  &::after {
     content: '';
     position: absolute;
     top: -1px;
@@ -109,11 +117,28 @@
     @apply border-0 rounded-lg pointer-events-none;
   }
 
-  .input:hover::after {
+  &:hover::after {
     @apply border;
     border-color: var(--borderHover);
   }
+}
 
+@layer utilities {
+  :root {
+    --backgroundHover: rgba(0, 0, 0, 2.5%);
+    --backgroundInverseHover: rgba(255, 255, 255, 5%);
+    --backgroundTransparentCard: rgba(250, 250, 250, 72%);
+    --borderHover: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --backgroundHover: rgba(255, 255, 255, 5%);
+      --backgroundInverseHover: rgba(0, 0, 0, 5%);
+      --backgroundTransparentCard: rgba(39, 39, 42, 72%);
+      --borderHover: rgba(255, 255, 255, 0.1);
+    }
+  }
 }
 
 .p-sa {
