@@ -14,7 +14,7 @@ const AppCard: React.FC<AppCardProps> = ({ href, imageSrc, imageAlt, title, desc
     target='_blank'
     rel="noopener noreferrer"
   >
-    <div className='relative overflow-hidden flex px-2 py-2 w-full rounded-xl gap-3 items-center backgroundSecondary border borderSecondary backgroundHoverOverlay shadow-xs dark:shadow-none md:w-fit'>
+    <div className='relative overflow-hidden flex px-2 py-2 w-full rounded-xl gap-3 items-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-xs dark:shadow-none md:w-fit backgroundHoverOverlay'>
       <Image
         src={imageSrc}
         alt={imageAlt}
