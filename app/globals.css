@@ -1,24 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --backgroundHover: rgba(0, 0, 0, 2.5%);
-  --backgroundInverseHover: rgba(255, 255, 255, 5%);
-  --backgroundTransparentCard: rgba(250, 250, 250, 72%);
-  --borderHover: rgba(0, 0, 0, 0.20);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --backgroundHover: rgba(255, 255, 255, 5%);
-    --backgroundInverseHover: rgba(0, 0, 0, 5%);
-    --backgroundTransparentCard: rgba(39, 39, 42, 72%);
-    --borderHover: rgba(255, 255, 255, 0.1);
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-@layer components {
+@layer utlities {
+  :root {
+    --backgroundHover: rgba(0, 0, 0, 2.5%);
+    --backgroundInverseHover: rgba(255, 255, 255, 5%);
+    --backgroundTransparentCard: rgba(250, 250, 250, 72%);
+    --borderHover: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --backgroundHover: rgba(255, 255, 255, 5%);
+      --backgroundInverseHover: rgba(0, 0, 0, 5%);
+      --backgroundTransparentCard: rgba(39, 39, 42, 72%);
+      --borderHover: rgba(255, 255, 255, 0.1);
+    }
+  }
 
   .contentPrimary {
     @apply text-zinc-950 dark:text-white;
@@ -28,39 +35,46 @@
     @apply text-zinc-500 dark:text-zinc-400;
   }
 
-  .contentTertiary {
-    @apply text-zinc-950 dark:text-white;
-  }
-
-  .backgroundPrimary {
-    @apply bg-white dark:bg-zinc-900;
-  }
-
-  .backgroundSecondary {
-    @apply bg-zinc-50 dark:bg-zinc-800;
-  }
-
-  .backgroundTertiary {
-    @apply bg-zinc-100 dark:bg-zinc-700;
-  }
-
   .backgroundTransparentCard {
     background-color: var(--backgroundTransparentCard);
   }
 
-  .borderPrimary {
-    @apply border-zinc-200 dark:border-zinc-700;
+  .backgroundHoverOverlay {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  
+    &:hover::after {
+      background-color: var(--backgroundHover);
+    }
   }
 
-  .borderSecondary {
-    @apply border-zinc-100 dark:border-zinc-800;
-  }
+.primaryButton {
+  box-shadow:
+    0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset,
+    0px 1px 2px 0px rgba(88, 101, 242, 0.05);
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  
+    &:hover::after {
+      background-color: var(--backgroundInverseHover);
+    }
+  @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white;
+}
 
-  .borderTertiary {
-    @apply border-zinc-50 dark:border-zinc-950;
-  }
-
-  .backgroundHoverOverlay::after {
+.plainButton {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -69,37 +83,16 @@
     left: 0;
   }
 
-  .backgroundHoverOverlay:hover::after {
+  &:hover::after {
     background-color: var(--backgroundHover);
   }
+  @apply relative flex items-center justify-center rounded-lg overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent hover:bg-white hover:dark:bg-zinc-900;;
+}
 
-  .backgroundInverseHoverOverlay::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+.input {
+  @apply relative flex w-full items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-xs dark:shadow-none appearance-none;
 
-  .backgroundInverseHoverOverlay:hover::after {
-    background-color: var(--backgroundInverseHover);
-  }
-
-  .primaryButton {
-    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 2px 0px rgba(88, 101, 242, 0.05);
-    @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white backgroundInverseHoverOverlay;
-  }
-
-  .plainButton {
-    @apply relative flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden select-none text-sm font-semibold contentPrimary bg-transparent hover:backgroundPrimary backgroundHoverOverlay;
-  }
-
-  .input {
-    @apply relative flex w-full items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm backgroundPrimary border borderPrimary shadow-sm dark:shadow-none;
-  }
-
-  .input::after {
+  &::after {
     content: '';
     position: absolute;
     top: -1px;
@@ -109,12 +102,15 @@
     @apply border-0 rounded-lg pointer-events-none;
   }
 
-  .input:hover::after {
+  &:hover::after {
     @apply border;
     border-color: var(--borderHover);
   }
+}
+
 
 }
+
 
 .p-sa {
   padding-top: env(safe-area-inset-top);
@@ -139,6 +135,7 @@
   padding-left: env(safe-area-inset-left);
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
 }
