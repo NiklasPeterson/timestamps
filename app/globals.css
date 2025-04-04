@@ -86,7 +86,7 @@
   &:hover::after {
     background-color: var(--backgroundHover);
   }
-  @apply relative flex items-center justify-center rounded-lg overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent hover:bg-white hover:dark:bg-zinc-900;;
+  @apply relative flex items-center justify-center overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent hover:bg-white hover:dark:bg-zinc-900;;
 }
 
 .input {
