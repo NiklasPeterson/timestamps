@@ -25,7 +25,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ children, label, value }) => {
   };
 
   return (
-    <div className="flex items-center shadow-xs dark:shadow-none gap-2 p-2 rounded-lg relative bg-white dark:bg-zinc-900 overflow-hidden backgroundHoverOverlay cursor-pointer" onClick={handleButtonClick}>
+    <div className="flex items-center shadow-xs dark:shadow-none gap-2 p-2 pr-4 rounded-lg relative bg-white dark:bg-zinc-900 overflow-hidden backgroundHoverOverlay cursor-pointer" onClick={handleButtonClick}>
       <div className="flex-1">
         {children}
         <input readOnly type="text" aria-label={label} value={value} className="hidden" />
