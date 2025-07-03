@@ -12,7 +12,7 @@
     "@supabase/supabase-js": "^2.49.4",
     "@vercel/analytics": "1.5.0",
     "moment": "2.30.1",
-    "next": "15.3.2",
+    "next": "15.3.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "sonner": "2.0.3",
