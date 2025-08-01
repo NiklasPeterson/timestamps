@@ -68,7 +68,7 @@ export default function Home() {
               and other services that support timestamp format.
             </h2>
 
-            <div className='items-center mt-2 hidden md:flex'>Made by <a href="https://x.com/niklas_peterson" className='group plainButton h-8 w-fit pl-1 pr-3 ml-1 gap-2 rounded-full' target='_blank' rel="noopener noreferrer">
+            <div className='items-center mt-2 hidden md:flex'>Made by <a href="https://niklaspeterson.com" className='group plainButton h-8 w-fit pl-1 pr-3 ml-1 gap-2 rounded-full' target='_blank'>
               <Image src="/niklaspeterson.jpg" width={24} height={24} alt='Profile picture of Niklas Peterson' className='rounded-full' /> Niklas Peterson</a>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function Home() {
             </svg>
           </a>
         </div>
-        <p className='flex items-center contentSecondary gap-1 text-sm'>Made by <a href="https://x.com/niklas_peterson" className='flex items-center font-semibold contentPrimary' target='_blank' rel="noopener noreferrer">Niklas Peterson</a>
+        <p className='flex items-center contentSecondary gap-1 text-sm'>Made by <a href="https://niklaspeterson.com" className='flex items-center font-semibold contentPrimary' target='_blank'>Niklas Peterson</a>
         </p>
 
       </footer>
