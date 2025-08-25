@@ -24,7 +24,7 @@
     "@types/react-dom": "^19.1.7",
     "@types/uuid": "^10.0.0",
     "eslint": "^9",
-    "eslint-config-next": "^15.4.5",
+    "eslint-config-next": "^15.5.0",
     "postcss": "^8",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
