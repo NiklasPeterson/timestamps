@@ -11,7 +11,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.87.1",
     "moment": "2.30.1",
-    "next": "16.0.10",
+    "next": "16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.0",
     "sonner": "2.0.7",
