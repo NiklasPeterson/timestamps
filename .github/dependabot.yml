@@ -1,8 +1,32 @@
 version: 2
+
 updates:
-  - package-ecosystem: npm
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: monthly
+      interval: "weekly"
+      day: "monday"
+      time: "12:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 8
+    labels:
+      - "dependencies"
+      - "npm"
     assignees:
-       - NiklasPeterson
+      - "NiklasPeterson"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      react-stack:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react*"
+          - "next"
+      tailwind-stack:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "tailwindcss-animate"
+
