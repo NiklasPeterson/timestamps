@@ -1,5 +1,4 @@
 import React from 'react';
-import PlainButton from './PlainButton';
 import { toast } from 'sonner'
 
 interface ResultItemProps {
@@ -25,16 +24,23 @@ const ResultItem: React.FC<ResultItemProps> = ({ children, label, value }) => {
   };
 
   return (
-    <div className="flex items-center shadow-xs dark:shadow-none gap-2 p-2 pr-4 rounded-lg relative bg-white dark:bg-zinc-900 overflow-hidden backgroundHoverOverlay cursor-pointer" onClick={handleButtonClick}>
-      <div className="flex-1">
+    <button
+      type="button"
+      onClick={handleButtonClick}
+      aria-label={`Copy ${label} timestamp`}
+      className="flex w-full items-center gap-2 p-2 rounded-lg relative bg-white dark:bg-zinc-900 shadow-xs dark:shadow-none overflow-hidden backgroundHoverOverlay text-left cursor-pointer transition-transform duration-200 ease-out active:scale-[0.995] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5865F2]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950"
+    >
+      <div className="flex-1 min-w-0">
         {children}
-        <input readOnly type="text" aria-label={label} value={value} className="hidden" />
       </div>
 
-      <PlainButton>
+      <span
+        aria-hidden="true"
+        className="flex h-8 w-8 items-center justify-center rounded-lg contentPrimary"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" className="fill-current"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
-      </PlainButton>
-    </div>
+      </span>
+    </button>
   );
 };
 
