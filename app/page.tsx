@@ -68,7 +68,7 @@ export default function Home() {
               and other services that support timestamp format.
             </h2>
 
-            <div className='items-center mt-2 hidden md:flex'>Made by <a href="https://niklaspeterson.com" className='group plainButton h-8 w-fit pl-1 pr-3 ml-1 gap-2 rounded-full' target='_blank'>
+            <div className='items-center mt-2 hidden md:flex'>Made by <a href="https://niklaspeterson.com" className='group plainButton w-fit pl-1 pr-3 ml-1 gap-2 rounded-full' target='_blank' rel="noopener noreferrer">
               <Image src="/niklaspeterson.jpg" width={24} height={24} alt='Profile picture of Niklas Peterson' className='rounded-full' /> Niklas Peterson</a>
             </div>
           </div>
@@ -95,7 +95,8 @@ export default function Home() {
                 href="https://buymeacoffee.com/niklaspeterson"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="plainButton rounded-lg h-8 w-8"
+                aria-label="Buy Niklas Peterson a coffee"
+                className="plainButton rounded-lg"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.4827 11.239C11.7643 11.5465 10.949 11.8952 9.8924 11.8952C9.4504 11.8944 9.01053 11.8337 8.58478 11.715L9.31555 19.2178C9.34141 19.5313 9.48427 19.8237 9.71575 20.0369C9.94723 20.25 10.2504 20.3682 10.5651 20.3682C10.5651 20.3682 11.6012 20.422 11.947 20.422C12.3191 20.422 13.4349 20.3682 13.4349 20.3682C13.7495 20.3682 14.0526 20.2498 14.284 20.0367C14.5154 19.8236 14.6582 19.5313 14.6841 19.2178L15.4668 10.9269C15.117 10.8074 14.764 10.7281 14.3661 10.7281C13.6778 10.7278 13.1233 10.9648 12.4827 11.239Z" className="fill-current" />
@@ -106,7 +107,8 @@ export default function Home() {
                 href='https://github.com/NiklasPeterson/timestamps'
                 target='_blank'
                 rel="noopener noreferrer"
-                className="plainButton rounded-lg h-8 w-8"
+                aria-label="Open the timestamps GitHub repository"
+                className="plainButton rounded-lg"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.0001 2C6.47791 2 2 6.59036 2 12.2531C2 16.7833 4.86533 20.6266 8.83865 21.9824C9.33844 22.0773 9.5219 21.76 9.5219 21.489C9.5219 21.2446 9.51265 20.4369 9.50832 19.5802C6.72628 20.2004 6.13926 18.3704 6.13926 18.3704C5.68437 17.1853 5.02893 16.8702 5.02893 16.8702C4.12164 16.2338 5.09733 16.2469 5.09733 16.2469C6.1015 16.3192 6.63024 17.3036 6.63024 17.3036C7.52215 18.8709 8.96965 18.4178 9.54028 18.1558C9.63002 17.4932 9.8892 17.0409 10.1752 16.7848C7.95403 16.5256 5.61911 15.6464 5.61911 11.7176C5.61911 10.5982 6.00977 9.68357 6.64944 8.96557C6.54562 8.70732 6.20332 7.66444 6.74632 6.25216C6.74632 6.25216 7.58607 5.97661 9.49706 7.30316C10.2947 7.07599 11.1502 6.96203 12.0001 6.95816C12.8499 6.96203 13.7061 7.07599 14.5052 7.30316C16.4138 5.97661 17.2525 6.25216 17.2525 6.25216C17.7968 7.66444 17.4544 8.70732 17.3505 8.96557C17.9917 9.68357 18.3797 10.5982 18.3797 11.7176C18.3797 15.6557 16.0404 16.5228 13.8135 16.7766C14.1722 17.0948 14.4918 17.7188 14.4918 18.6754C14.4918 20.0473 14.4802 21.1514 14.4802 21.489C14.4802 21.762 14.6602 22.0817 15.1671 21.981C19.1384 20.6237 22 16.7817 22 12.2531C22 6.59036 17.5228 2 12.0001 2Z" className="fill-current" />
@@ -136,7 +138,8 @@ export default function Home() {
             href="https://buymeacoffee.com/niklaspeterson"
             target="_blank"
             rel="noopener noreferrer"
-            className="plainButton rounded-lg h-8 w-8"
+            aria-label="Buy Niklas Peterson a coffee"
+            className="plainButton rounded-lg"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.4827 11.239C11.7643 11.5465 10.949 11.8952 9.8924 11.8952C9.4504 11.8944 9.01053 11.8337 8.58478 11.715L9.31555 19.2178C9.34141 19.5313 9.48427 19.8237 9.71575 20.0369C9.94723 20.25 10.2504 20.3682 10.5651 20.3682C10.5651 20.3682 11.6012 20.422 11.947 20.422C12.3191 20.422 13.4349 20.3682 13.4349 20.3682C13.7495 20.3682 14.0526 20.2498 14.284 20.0367C14.5154 19.8236 14.6582 19.5313 14.6841 19.2178L15.4668 10.9269C15.117 10.8074 14.764 10.7281 14.3661 10.7281C13.6778 10.7278 13.1233 10.9648 12.4827 11.239Z" className="fill-current" />
@@ -147,7 +150,8 @@ export default function Home() {
             href='https://github.com/NiklasPeterson/timestamps'
             target='_blank'
             rel="noopener noreferrer"
-            className="plainButton rounded-lg h-8 w-8"
+            aria-label="Open the timestamps GitHub repository"
+            className="plainButton rounded-lg"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.0001 2C6.47791 2 2 6.59036 2 12.2531C2 16.7833 4.86533 20.6266 8.83865 21.9824C9.33844 22.0773 9.5219 21.76 9.5219 21.489C9.5219 21.2446 9.51265 20.4369 9.50832 19.5802C6.72628 20.2004 6.13926 18.3704 6.13926 18.3704C5.68437 17.1853 5.02893 16.8702 5.02893 16.8702C4.12164 16.2338 5.09733 16.2469 5.09733 16.2469C6.1015 16.3192 6.63024 17.3036 6.63024 17.3036C7.52215 18.8709 8.96965 18.4178 9.54028 18.1558C9.63002 17.4932 9.8892 17.0409 10.1752 16.7848C7.95403 16.5256 5.61911 15.6464 5.61911 11.7176C5.61911 10.5982 6.00977 9.68357 6.64944 8.96557C6.54562 8.70732 6.20332 7.66444 6.74632 6.25216C6.74632 6.25216 7.58607 5.97661 9.49706 7.30316C10.2947 7.07599 11.1502 6.96203 12.0001 6.95816C12.8499 6.96203 13.7061 7.07599 14.5052 7.30316C16.4138 5.97661 17.2525 6.25216 17.2525 6.25216C17.7968 7.66444 17.4544 8.70732 17.3505 8.96557C17.9917 9.68357 18.3797 10.5982 18.3797 11.7176C18.3797 15.6557 16.0404 16.5228 13.8135 16.7766C14.1722 17.0948 14.4918 17.7188 14.4918 18.6754C14.4918 20.0473 14.4802 21.1514 14.4802 21.489C14.4802 21.762 14.6602 22.0817 15.1671 21.981C19.1384 20.6237 22 16.7817 22 12.2531C22 6.59036 17.5228 2 12.0001 2Z" className="fill-current" />
@@ -161,7 +165,7 @@ export default function Home() {
             </svg>
           </a>
         </div>
-        <p className='flex items-center contentSecondary gap-1 text-sm'>Made by <a href="https://niklaspeterson.com" className='flex items-center font-semibold contentPrimary' target='_blank'>Niklas Peterson</a>
+        <p className='flex items-center contentSecondary gap-1 text-sm'>Made by <a href="https://niklaspeterson.com" className='focusLinkInline flex items-center font-semibold contentPrimary' target='_blank' rel="noopener noreferrer">Niklas Peterson</a>
         </p>
 
       </footer>

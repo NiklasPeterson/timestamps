@@ -13,6 +13,7 @@ const AppCard: React.FC<AppCardProps> = ({ href, imageSrc, imageAlt, title, desc
     href={href}
     target='_blank'
     rel="noopener noreferrer"
+    className='focusLink block'
   >
     <div className='relative overflow-hidden flex px-2 py-2 w-full rounded-xl gap-3 items-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200/50 dark:border-zinc-700/50 shadow-xs dark:shadow-none md:w-fit backgroundHoverOverlay'>
       <Image

@@ -67,10 +67,10 @@
       left: 0;
     }
   
-    &:hover::after {
-      background-color: var(--backgroundInverseHover);
-    }
-  @apply w-fit relative flex gap-2 px-3 pr-4 h-10 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white;
+	    &:hover::after {
+	      background-color: var(--backgroundInverseHover);
+	    }
+	  @apply w-fit relative flex gap-2 px-4 min-h-11 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5865F2]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950;
 }
 
 .plainButton {
@@ -86,11 +86,11 @@
   &:hover::after {
     background-color: var(--backgroundHover);
   }
-  @apply relative flex items-center justify-center overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent hover:bg-white hover:dark:bg-zinc-900;;
+  @apply relative flex items-center justify-center overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent hover:bg-white hover:dark:bg-zinc-900 min-h-11 min-w-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-zinc-500/45 dark:focus-visible:ring-offset-zinc-950;
 }
 
 .input {
-  @apply relative flex w-full items-center justify-between gap-2 px-3 h-9 rounded-lg text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-xs dark:shadow-none appearance-none;
+  @apply relative flex w-full items-center justify-between gap-2 px-3 min-h-11 rounded-lg text-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-xs dark:shadow-none appearance-none focus-within:outline-none focus-within:ring-2 focus-within:ring-[#5865F2]/20 focus-within:ring-offset-2 focus-within:ring-offset-white dark:focus-within:ring-offset-zinc-950;
 
   &::after {
     content: '';
@@ -106,6 +106,14 @@
     @apply border;
     border-color: var(--borderHover);
   }
+}
+
+.focusLink {
+  @apply rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-zinc-500/45 dark:focus-visible:ring-offset-zinc-950;
+}
+
+.focusLinkInline {
+  @apply rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-zinc-500/45 dark:focus-visible:ring-offset-zinc-950;
 }
 
 
