@@ -133,26 +133,6 @@ export default function Home() {
       </main>
 
       <section
-        aria-labelledby="format-reference"
-        className="w-full max-w-3xl px-4 mb-12 flex flex-col gap-4"
-      >
-        <h2 id="format-reference" className="text-2xl font-semibold md:text-3xl">
-          Discord timestamp format reference
-        </h2>
-        <p className="contentSecondary">
-          Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside <code>&lt;t:...&gt;</code> to control how Discord renders the date and time in each viewer&apos;s local timezone.
-        </p>
-        <ul className="flex flex-col gap-2">
-          <li><strong><code>:f</code></strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li>
-          <li><strong><code>:F</code></strong> — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)</li>
-          <li><strong><code>:d</code></strong> — Short date (e.g. 12/25/2025)</li>
-          <li><strong><code>:D</code></strong> — Long date (e.g. December 25, 2025)</li>
-          <li><strong><code>:t</code></strong> — Short time (e.g. 3:00 PM)</li>
-          <li><strong><code>:R</code></strong> — Relative time (e.g. &quot;in 3 hours&quot;)</li>
-        </ul>
-      </section>
-
-      <section
         aria-labelledby="faq"
         className="w-full max-w-3xl px-4 mb-16 flex flex-col gap-6"
       >
@@ -168,16 +148,24 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">What is a UNIX timestamp?</h3>
+          <h3 className="font-semibold">What do the Discord timestamp format codes mean?</h3>
           <p className="contentSecondary">
-            A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone.
+            Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside <code>&lt;t:...&gt;</code> to control how Discord renders the date and time in each viewer&apos;s local timezone.
           </p>
+          <ul className="flex flex-col gap-2 contentSecondary">
+            <li><strong><code>:f</code></strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li>
+            <li><strong><code>:F</code></strong> — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)</li>
+            <li><strong><code>:d</code></strong> — Short date (e.g. 12/25/2025)</li>
+            <li><strong><code>:D</code></strong> — Long date (e.g. December 25, 2025)</li>
+            <li><strong><code>:t</code></strong> — Short time (e.g. 3:00 PM)</li>
+            <li><strong><code>:R</code></strong> — Relative time (e.g. &quot;in 3 hours&quot;)</li>
+          </ul>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">What do the Discord timestamp format codes mean?</h3>
+          <h3 className="font-semibold">What is a UNIX timestamp?</h3>
           <p className="contentSecondary">
-            f = short date and time, F = long date and time, d = short date, D = long date, t = short time, R = relative time (e.g. &quot;in 3 hours&quot;).
+            A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone.
           </p>
         </div>
 

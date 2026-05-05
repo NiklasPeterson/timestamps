@@ -75,7 +75,7 @@ const faqSchema = {
       name: "What do the Discord timestamp format codes mean?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "f = short date and time, F = long date and time, d = short date, D = long date, t = short time, R = relative time (e.g. 'in 3 hours').",
+        text: "<p>Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside &lt;t:...&gt; to control how Discord renders the date and time in each viewer's local timezone.</p><ul><li><strong>:f</strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li><li><strong>:F</strong> — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)</li><li><strong>:d</strong> — Short date (e.g. 12/25/2025)</li><li><strong>:D</strong> — Long date (e.g. December 25, 2025)</li><li><strong>:t</strong> — Short time (e.g. 3:00 PM)</li><li><strong>:R</strong> — Relative time (e.g. \"in 3 hours\")</li></ul>",
       },
     },
     {
