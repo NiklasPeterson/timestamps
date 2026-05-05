@@ -22,6 +22,8 @@ A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970.
 ## Pages
 
 - [Home](https://timestamps.app): Generate Discord and UNIX timestamps from any date and time
+- [Discord timestamp format reference](https://timestamps.app/formats): Detailed reference for all six Discord timestamp format codes with examples and guidance
+- [What is a UNIX timestamp?](https://timestamps.app/unix-timestamp): Plain-language explainer of UNIX/epoch time, including conversions and Discord usage
 - [GitHub repository](https://github.com/NiklasPeterson/timestamps): Source code
 
 ## Discord bot

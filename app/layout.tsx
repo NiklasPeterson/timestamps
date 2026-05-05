@@ -52,45 +52,6 @@ const webApplicationSchema = {
   dateModified: new Date().toISOString().slice(0, 10),
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do I generate a Discord timestamp?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Pick a date and time on timestamps.app, then copy any of the six Discord timestamp formats (e.g. <t:1700000000:F>) and paste it into a Discord message. Discord will render it in each viewer's local timezone. See the full list of Discord timestamp format codes for what each one renders.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is a UNIX timestamp?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone. Discord wraps the timestamp in a format code tag to control how it's displayed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What do the Discord timestamp format codes mean?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "<p>Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside &lt;t:...&gt; to control how Discord renders the date and time in each viewer's local timezone. For a quick start, see how to generate a Discord timestamp.</p><ul><li><strong>:f</strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li><li><strong>:F</strong> — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)</li><li><strong>:d</strong> — Short date (e.g. 12/25/2025)</li><li><strong>:D</strong> — Long date (e.g. December 25, 2025)</li><li><strong>:t</strong> — Short time (e.g. 3:00 PM)</li><li><strong>:R</strong> — Relative time (e.g. \"in 3 hours\")</li></ul>",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is timestamps.app free?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. timestamps.app is free, requires no sign-up, and runs entirely in your browser.",
-      },
-    },
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -103,10 +64,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <AnalyticsTracker />
         {children}
