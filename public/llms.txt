@@ -1,0 +1,29 @@
+# timestamps.app
+
+> Free online tool to generate Discord timestamps and UNIX timestamps. Pick any date and time, then copy the <t:...> format Discord and other platforms need. No sign-up required.
+
+## About
+
+timestamps.app helps users create Discord-ready timestamp tags. Discord renders these tags in each viewer's local timezone. The tool is free, requires no sign-up, and runs entirely in the browser. Created and maintained by Niklas Peterson (https://niklaspeterson.com).
+
+## Discord timestamp format codes
+
+Append a code to a UNIX timestamp inside `<t:...>` to control how Discord renders the date and time:
+
+- `:f` — Short date and time (e.g. December 25, 2025 3:00 PM)
+- `:F` — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)
+- `:d` — Short date (e.g. 12/25/2025)
+- `:D` — Long date (e.g. December 25, 2025)
+- `:t` — Short time (e.g. 3:00 PM)
+- `:R` — Relative time (e.g. "in 3 hours")
+
+A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970.
+
+## Pages
+
+- [Home](https://timestamps.app): Generate Discord and UNIX timestamps from any date and time
+- [GitHub repository](https://github.com/NiklasPeterson/timestamps): Source code
+
+## Discord bot
+
+A companion Discord bot is available: https://discord.com/oauth2/authorize?client_id=1031598414280015915

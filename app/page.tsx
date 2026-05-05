@@ -141,16 +141,16 @@ export default function Home() {
         </h2>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">How do I generate a Discord timestamp?</h3>
+          <h3 id="faq-how" className="font-semibold">How do I generate a Discord timestamp?</h3>
           <p className="contentSecondary">
-            Pick a date and time on timestamps.app, then copy any of the six Discord timestamp formats (e.g. <code>&lt;t:1700000000:F&gt;</code>) and paste it into a Discord message. Discord will render it in each viewer&apos;s local timezone.
+            Pick a date and time on timestamps.app, then copy any of the six Discord timestamp formats (e.g. <code>&lt;t:1700000000:F&gt;</code>) and paste it into a Discord message. Discord will render it in each viewer&apos;s local timezone. See the <a href="#faq-format-codes" className="underline">full list of Discord timestamp format codes</a> for what each one renders.
           </p>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">What do the Discord timestamp format codes mean?</h3>
+          <h3 id="faq-format-codes" className="font-semibold">What do the Discord timestamp format codes mean?</h3>
           <p className="contentSecondary">
-            Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside <code>&lt;t:...&gt;</code> to control how Discord renders the date and time in each viewer&apos;s local timezone.
+            Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside <code>&lt;t:...&gt;</code> to control how Discord renders the date and time in each viewer&apos;s local timezone. For a quick start, see <a href="#faq-how" className="underline">how to generate a Discord timestamp</a>.
           </p>
           <ul className="flex flex-col gap-2 contentSecondary">
             <li><strong><code>:f</code></strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li>
@@ -163,14 +163,14 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">What is a UNIX timestamp?</h3>
+          <h3 id="faq-unix" className="font-semibold">What is a UNIX timestamp?</h3>
           <p className="contentSecondary">
-            A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone.
+            A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone. Discord wraps the timestamp in <a href="#faq-format-codes" className="underline">a format code tag</a> to control how it&apos;s displayed.
           </p>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">Is timestamps.app free?</h3>
+          <h3 id="faq-free" className="font-semibold">Is timestamps.app free?</h3>
           <p className="contentSecondary">
             Yes. timestamps.app is free, requires no sign-up, and runs entirely in your browser.
           </p>
