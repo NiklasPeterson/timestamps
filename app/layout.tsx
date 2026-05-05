@@ -60,11 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased p-sa contentPrimary flex flex-col min-h-screen justify-start items-start bg-white dark:bg-black md:justify-center md:items-center`}>
-        <div
-          aria-hidden="true"
-          className="fixed inset-0 -z-10 pointer-events-none bg-no-repeat bg-center bg-cover md:bg-auto bg-[url(../public/bg.png)]"
-        />
+        className={`${inter.className} antialiased p-sa contentPrimary flex flex-col min-h-screen justify-start items-start bg-white dark:bg-black bg-no-repeat bg-[url(../public/bg.png)] bg-center bg-cover md:bg-auto  md:justify-center md:items-center`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}

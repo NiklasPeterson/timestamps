@@ -6,92 +6,7 @@ import ResultList from "./components/ResultList";
 import DatePicker from './components/DatePicker';
 import moment, { Moment } from 'moment';
 import Image from 'next/image';
-import Link from 'next/link';
 import ServerCount from './components/ServerCount';
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do I generate a Discord timestamp?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Pick a date and time on timestamps.app, then copy any of the six Discord timestamp formats (e.g. <t:1700000000:F>) and paste it into a Discord message. Discord will render it in each viewer's local timezone. See the full Discord timestamp format reference for what each code renders.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is a UNIX timestamp?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone. The dedicated UNIX timestamp explainer covers the epoch, conversions, and how Discord uses it.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What do the Discord timestamp format codes mean?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "<p>Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside &lt;t:...&gt; to control how Discord renders the date and time in each viewer's local timezone.</p><ul><li><strong>:f</strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li><li><strong>:F</strong> — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)</li><li><strong>:d</strong> — Short date (e.g. 12/25/2025)</li><li><strong>:D</strong> — Long date (e.g. December 25, 2025)</li><li><strong>:t</strong> — Short time (e.g. 3:00 PM)</li><li><strong>:R</strong> — Relative time (e.g. \"in 3 hours\")</li></ul><p>The format reference page has examples and guidance on when to pick each code.</p>",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is there a Discord bot?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. timestamps.app has a companion Discord bot that brings the timestamp generator directly into Discord, so you can grab a formatted timestamp without leaving the server. Add it from the home page or via https://discord.com/oauth2/authorize?client_id=1031598414280015915.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is timestamps.app free?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. timestamps.app is free, requires no sign-up, and runs entirely in your browser.",
-      },
-    },
-  ],
-};
-
-function FaqItem({
-  id,
-  question,
-  children,
-}: {
-  id: string;
-  question: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <details
-      id={id}
-      className="group rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm overflow-hidden"
-    >
-      <summary className="flex items-center justify-between gap-3 px-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden hover:bg-zinc-50/60 dark:hover:bg-zinc-800/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#5865F2]/35 transition-colors">
-        <h3 className="font-semibold">{question}</h3>
-        <svg
-          className="size-5 contentSecondary transition-transform duration-200 group-open:rotate-180 shrink-0"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </summary>
-      <div className="px-4 pb-4 contentSecondary flex flex-col gap-2">
-        {children}
-      </div>
-    </details>
-  );
-}
 
 export default function Home() {
   const [dateTime, setDateTime] = useState<Moment>(moment());
@@ -102,10 +17,6 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <div className="flex w-full pr-sa md:top-0 md:absolute">
         <div className="flex w-full mx-4 mt-4 gap-2 justify-end flex-col md:flex-row">
           <AppCard
@@ -220,67 +131,6 @@ export default function Home() {
         </div>
 
       </main>
-
-      <section
-        aria-labelledby="faq"
-        className="w-full max-w-3xl px-4 mb-16 flex flex-col gap-6"
-      >
-        <h2 id="faq" className="text-2xl font-semibold md:text-3xl">
-          Frequently asked questions
-        </h2>
-
-        <div className="flex flex-col gap-3">
-          <FaqItem id="faq-how" question="How do I generate a Discord timestamp?">
-            <p>
-              Pick a date and time on timestamps.app, then copy any of the six Discord timestamp formats (e.g. <code>&lt;t:1700000000:F&gt;</code>) and paste it into a Discord message. Discord will render it in each viewer&apos;s local timezone. See the <Link href="/formats" className="underline">full Discord timestamp format reference</Link> for what each code renders.
-            </p>
-          </FaqItem>
-
-          <FaqItem id="faq-format-codes" question="What do the Discord timestamp format codes mean?">
-            <p>
-              Discord supports six timestamp format codes. Append the code to a UNIX timestamp inside <code>&lt;t:...&gt;</code> to control how Discord renders the date and time in each viewer&apos;s local timezone.
-            </p>
-            <ul className="flex flex-col gap-2">
-              <li><strong><code>:f</code></strong> — Short date and time (e.g. December 25, 2025 3:00 PM)</li>
-              <li><strong><code>:F</code></strong> — Long date and time (e.g. Thursday, December 25, 2025 3:00 PM)</li>
-              <li><strong><code>:d</code></strong> — Short date (e.g. 12/25/2025)</li>
-              <li><strong><code>:D</code></strong> — Long date (e.g. December 25, 2025)</li>
-              <li><strong><code>:t</code></strong> — Short time (e.g. 3:00 PM)</li>
-              <li><strong><code>:R</code></strong> — Relative time (e.g. &quot;in 3 hours&quot;)</li>
-            </ul>
-            <p>
-              The <Link href="/formats" className="underline">format reference page</Link> has examples and guidance on when to pick each code.
-            </p>
-          </FaqItem>
-
-          <FaqItem id="faq-unix" question="What is a UNIX timestamp?">
-            <p>
-              A UNIX timestamp is the number of seconds since 00:00:00 UTC on 1 January 1970. It is the format Discord and many other platforms use to represent a moment in time independently of timezone. The dedicated <Link href="/unix-timestamp" className="underline">UNIX timestamp explainer</Link> covers the epoch, conversions, and how Discord uses it.
-            </p>
-          </FaqItem>
-
-          <FaqItem id="faq-bot" question="Is there a Discord bot?">
-            <p>
-              Yes. timestamps.app has a companion Discord bot that brings the timestamp generator directly into Discord, so you can grab a formatted timestamp without leaving the server.{" "}
-              <a
-                href="https://discord.com/oauth2/authorize?client_id=1031598414280015915"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Add it to your server
-              </a>
-              .
-            </p>
-          </FaqItem>
-
-          <FaqItem id="faq-free" question="Is timestamps.app free?">
-            <p>
-              Yes. timestamps.app is free, requires no sign-up, and runs entirely in your browser.
-            </p>
-          </FaqItem>
-        </div>
-      </section>
 
       <footer className='flex flex-col w-full mb-4 items-center gap-2 md:hidden'>
         <div className="flex gap-1">
