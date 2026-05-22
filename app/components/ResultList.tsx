@@ -11,7 +11,6 @@ const FORMATS = [
   { label: "Relative Time", format: "fromNow", code: "R" },
 ];
 
-// Helper function to format the date
 const formatDate = (dateTime: string, format: string) => {
   return format === "fromNow" ? moment(dateTime).fromNow() : moment(dateTime).format(format);
 };
@@ -19,7 +18,6 @@ const formatDate = (dateTime: string, format: string) => {
 const ResultList: React.FC<{ dateTime: string }> = ({ dateTime }) => {
   const timestamp = useMemo(() => Math.floor(moment(dateTime).valueOf() / 1000), [dateTime]);
 
-  // Memoize formatted dates to avoid recalculating on every render
   const formattedDates = useMemo(() =>
     FORMATS.map(({ format }) => formatDate(dateTime, format)),
     [dateTime]

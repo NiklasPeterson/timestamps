@@ -1,6 +1,6 @@
-"use client"; // Add this directive at the top of the file
+"use client";
 
-import React, { useState, useCallback } from 'react'; // Added useState import
+import React, { useState, useCallback } from 'react';
 import AppCard from "./components/AppCard";
 import ResultList from "./components/ResultList";
 import DatePicker from './components/DatePicker';
