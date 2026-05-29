@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "../components/JsonLd";
+import { articleSchema } from "../lib/schema";
 
 export const metadata: Metadata = {
   title: "What is a UNIX Timestamp? — Epoch Time Explained",
@@ -22,38 +24,18 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+const schema = articleSchema({
   headline: "What is a UNIX Timestamp?",
   description:
     "A plain-language explanation of UNIX timestamps: what they are, how they work, and why they're used in Discord, databases, and APIs.",
-  url: "https://timestamps.app/unix-timestamp",
-  author: {
-    "@type": "Person",
-    name: "Niklas Peterson",
-    url: "https://niklaspeterson.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "timestamps.app",
-    url: "https://timestamps.app",
-  },
+  path: "/unix-timestamp",
   datePublished: "2026-05-05",
-  dateModified: new Date().toISOString().slice(0, 10),
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://timestamps.app/unix-timestamp",
-  },
-};
+});
 
 export default function UnixTimestampPage() {
   return (
     <main className="w-full max-w-3xl px-4 py-12 md:py-20 flex flex-col gap-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={schema} />
 
       <Link
         href="/"

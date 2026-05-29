@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import "./globals.css";
 import { Toaster } from 'sonner'
 import AnalyticsTracker from './components/AnalyticsTracker';
+import JsonLd from './components/JsonLd';
+import { webApplicationSchema } from './lib/schema';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,25 +35,6 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 }
 
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "timestamps.app",
-  url: "https://timestamps.app",
-  applicationCategory: "UtilitiesApplication",
-  operatingSystem: "Any",
-  description:
-    "Free tool to generate Discord timestamps and UNIX timestamps from any date and time.",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  author: {
-    "@type": "Person",
-    name: "Niklas Peterson",
-    url: "https://niklaspeterson.com",
-  },
-  datePublished: "2021-10-17",
-  dateModified: new Date().toISOString().slice(0, 10),
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,10 +44,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.className} antialiased p-sa contentPrimary flex flex-col min-h-screen justify-start items-start bg-white dark:bg-black bg-no-repeat bg-[url(../public/bg.png)] bg-center bg-cover md:bg-auto  md:justify-center md:items-center`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
-        />
+        <JsonLd data={webApplicationSchema} />
         <AnalyticsTracker />
         {children}
         <Toaster />

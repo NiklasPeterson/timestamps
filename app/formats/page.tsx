@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "../components/JsonLd";
+import { articleSchema } from "../lib/schema";
 
 export const metadata: Metadata = {
   title: "Discord Timestamp Format Reference — All 6 Format Codes",
@@ -22,30 +24,13 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+const schema = articleSchema({
   headline: "Discord Timestamp Format Reference",
   description:
     "Complete reference for Discord's six timestamp format codes (:f, :F, :d, :D, :t, :R) with rendered examples and guidance on when to use each.",
-  url: "https://timestamps.app/formats",
-  author: {
-    "@type": "Person",
-    name: "Niklas Peterson",
-    url: "https://niklaspeterson.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "timestamps.app",
-    url: "https://timestamps.app",
-  },
+  path: "/formats",
   datePublished: "2026-05-05",
-  dateModified: new Date().toISOString().slice(0, 10),
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://timestamps.app/formats",
-  },
-};
+});
 
 const FORMAT_CODES = [
   {
@@ -89,10 +74,7 @@ const FORMAT_CODES = [
 export default function FormatsPage() {
   return (
     <main className="w-full max-w-3xl px-4 py-12 md:py-20 flex flex-col gap-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={schema} />
 
       <Link
         href="/"
