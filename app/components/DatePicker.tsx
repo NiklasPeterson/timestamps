@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import moment, { Moment } from "moment";
 
 interface DatePickerProps {
@@ -30,28 +30,27 @@ const InputField: React.FC<{
 const DatePicker: React.FC<DatePickerProps> = ({ newTime }) => {
   const [date, setDate] = useState(moment().format('YYYY-MM-DD'));
   const [time, setTime] = useState(moment().format('HH:mm'));
-  const [dateError, setDateError] = useState<boolean>(false);
-  const [timeError, setTimeError] = useState<boolean>(false);
+  const isDateValid = moment(date, 'YYYY-MM-DD', true).isValid();
+  const isTimeValid = Boolean(time && moment(time, 'HH:mm', true).isValid());
 
-  const updateDateTime = useCallback(() => {
-    const dateTime = moment(`${date}T${time}`);
-
-    const isDateValid = moment(date, 'YYYY-MM-DD', true).isValid();
-    const isTimeValid = time && moment(time, 'HH:mm', true).isValid();
-
-    if (isDateValid && isTimeValid) {
-      newTime(dateTime);
-      setDateError(false);
-      setTimeError(false);
-    } else {
-      setDateError(!isDateValid);
-      setTimeError(!isTimeValid);
+  function updateDateTime(nextDate: string, nextTime: string) {
+    if (
+      moment(nextDate, 'YYYY-MM-DD', true).isValid() &&
+      moment(nextTime, 'HH:mm', true).isValid()
+    ) {
+      newTime(moment(`${nextDate}T${nextTime}`));
     }
-  }, [date, time, newTime]);
+  }
 
-  useEffect(() => {
-    updateDateTime();
-  }, [updateDateTime]);
+  function handleDateChange(value: string) {
+    setDate(value);
+    updateDateTime(value, time);
+  }
+
+  function handleTimeChange(value: string) {
+    setTime(value);
+    updateDateTime(date, value);
+  }
 
   return (
     <div className="flex flex-col gap-2 w-full">
@@ -60,8 +59,8 @@ const DatePicker: React.FC<DatePickerProps> = ({ newTime }) => {
         <InputField
           type="date"
           value={date}
-          onChange={setDate}
-          error={dateError}
+          onChange={handleDateChange}
+          error={!isDateValid}
           ariaLabel="Date"
           placeholder="Select a date"
           icon={
@@ -73,8 +72,8 @@ const DatePicker: React.FC<DatePickerProps> = ({ newTime }) => {
         <InputField
           type="time"
           value={time}
-          onChange={setTime}
-          error={timeError}
+          onChange={handleTimeChange}
+          error={!isTimeValid}
           ariaLabel="Time"
           placeholder="Select a time"
           icon={
