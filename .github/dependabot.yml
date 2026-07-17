@@ -17,6 +17,10 @@ updates:
     commit-message:
       prefix: "deps"
       include: "scope"
+    ignore:
+      # eslint-config-next still bundles plugins whose peer ranges stop at ESLint 9.
+      - dependency-name: "eslint"
+        versions: [">=10"]
     groups:
       react-stack:
         patterns:
@@ -29,4 +33,3 @@ updates:
           - "tailwindcss"
           - "@tailwindcss/*"
           - "tailwindcss-animate"
-
