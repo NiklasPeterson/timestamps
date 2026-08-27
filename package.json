@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run typecheck && next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.8",
@@ -26,7 +27,7 @@
     "eslint-config-next": "^16.2.10",
     "postcss": "^8.5.23",
     "tailwindcss": "^4.2.0",
-    "typescript": "^7.0.2"
+    "typescript": "7.0.2"
   },
   "overrides": {
     "postcss": "$postcss",
