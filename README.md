@@ -2,45 +2,56 @@
 
 A free, browser-based generator for Discord and UNIX timestamps. Pick a date and time, then copy a Discord-ready timestamp that every viewer sees in their own timezone.
 
-Live site: [Timestamps.app](https://timestamps.app) <br/>
-Companion bot: [Timestamps Discord](https://github.com/NiklasPeterson/timestamps-bot)
+[Open Timestamps.app](https://timestamps.app) · [View the companion Discord bot](https://github.com/NiklasPeterson/timestamps-bot)
+
+## Why I built it
+
+Discord timestamps are useful for communities spread across different timezones, but creating them by hand is awkward. I built Timestamps to make the process visual and immediate, then created the companion bot so the same workflow could be used directly inside Discord.
 
 ## What it does
 
 - Generates a UNIX timestamp in seconds from a selected date and time.
-- Produces all six Discord timestamp formats, ready to paste:
+- Produces six Discord timestamp formats, ready to paste:
   - `<t:timestamp:f>` — short date and time
   - `<t:timestamp:F>` — long date and time
-  - `<t:timestamp:d>` / `<t:timestamp:D>` — short / long date
+  - `<t:timestamp:d>` — short date
+  - `<t:timestamp:D>` — long date
   - `<t:timestamp:t>` — short time
   - `<t:timestamp:R>` — relative time
-- Lets users copy a format with one click.
-- Includes plain-language guides at `/unix-timestamp` and `/formats`.
-- Tracks page views and displays a Discord server count when Supabase is configured.
+- Shows a live preview of how each format will appear.
+- Lets users copy any format with one click.
+- Works across screen sizes and supports light and dark mode.
+- Includes plain-language guides to UNIX timestamps and Discord’s format codes.
+- Generates timestamps entirely in the browser. Selected dates and times are not sent to the server.
 
 ## Getting started
 
-Prerequisite: Node.js 20.9 or newer.
+Requires Node.js 20.9 or newer.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Scripts
 
 ```bash
-npm run dev    # Start the local development server
-npm run build  # Create a production build
-npm run start  # Run the production build
-npm run lint   # Check the code with ESLint
+npm run dev
+npm run build
+npm run start
+npm run lint
 ```
+
+- `npm run dev` starts the local development server.
+- `npm run build` creates a production build.
+- `npm run start` runs the production build.
+- `npm run lint` checks the code with ESLint.
 
 ## Optional Supabase integration
 
-The generator works without Supabase, but the analytics and server-count API routes require these server-only environment variables:
+The timestamp generator works without Supabase. The page-view and Discord server-count API routes require the following server-side environment variables:
 
 ```bash
 SUPABASE_URL=https://your-project.supabase.co
@@ -51,21 +62,21 @@ Add them to `.env.local` for local development or to your hosting provider’s e
 
 The configured database is expected to provide:
 
-- a `pageviews` table, used by `POST /api/analytics/pageview`
-- a `server_stats` relation with one row exposing `server_count`, used by `GET /api/server-count`
+- A `pageviews` table used by `POST /api/analytics/pageview`.
+- A `server_stats` relation containing one row with a `server_count` value, used by `GET /api/server-count`.
 
-If those variables or database objects are unavailable, the timestamp generator and reference pages still render; the related API requests return an error.
+If the environment variables or database objects are unavailable, the generator and reference pages still work. The related API requests return an error without affecting timestamp generation.
 
 ## Project structure
 
 ```text
 app/
   page.tsx                    Main timestamp generator
-  components/                 Date picker, format results, analytics, and UI pieces
-  unix-timestamp/page.tsx     UNIX timestamp explainer
+  components/                 Date picker, results, analytics, and UI components
+  unix-timestamp/page.tsx     UNIX timestamp guide
   formats/page.tsx            Discord format-code reference
-  api/                        Server-side analytics and server-count endpoints
-public/                       Icons, images, and social-preview assets
+  api/                        Analytics and server-count API routes
+public/                       Images and social-preview assets
 ```
 
 ## Built with
@@ -74,8 +85,12 @@ public/                       Icons, images, and social-preview assets
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Moment.js](https://momentjs.com/) for date formatting
-- [Supabase](https://supabase.com/) for optional analytics and stats
+- [Supabase](https://supabase.com/) for optional analytics and server statistics
+
+## Related project
+
+The [Timestamps Discord bot](https://github.com/NiklasPeterson/timestamps-bot) brings the same workflow into Discord through slash commands, timezone search, and private or shared timestamp creation.
 
 ## License
 
-No license file is currently included. All rights are reserved unless the repository owner adds a license.
+No license is currently included. All rights are reserved unless a license is added by the repository owner.
