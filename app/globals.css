@@ -1,5 +1,72 @@
 @import 'tailwindcss';
 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: 0.5rem;
+  --radius-md: calc(var(--radius) - 0.125rem);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #a1a1aa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --popover: #18181b;
+    --popover-foreground: #fafafa;
+    --primary: #fafafa;
+    --primary-foreground: #18181b;
+    --secondary: #27272a;
+    --secondary-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #fafafa;
+    --destructive: #f87171;
+    --border: #3f3f46;
+    --input: #3f3f46;
+    --ring: #71717a;
+  }
+}
+
 @layer base {
   *,
   ::after,
@@ -49,8 +116,10 @@
       left: 0;
     }
   
-    &:hover::after {
-      background-color: var(--backgroundHover);
+    @media (hover: hover) {
+      &:hover::after {
+        background-color: var(--backgroundHover);
+      }
     }
   }
 
@@ -67,8 +136,10 @@
       left: 0;
     }
   
-	    &:hover::after {
-	      background-color: var(--backgroundInverseHover);
+	    @media (hover: hover) {
+	      &:hover::after {
+	        background-color: var(--backgroundInverseHover);
+	      }
 	    }
 	  @apply w-fit relative flex gap-2 px-4 min-h-11 items-center rounded-lg select-none bg-[#5865F2] border border-[#5865F2] text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5865F2]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950;
 }
@@ -83,10 +154,16 @@
     left: 0;
   }
 
-  &:hover::after {
-    background-color: var(--backgroundHover);
+  @media (hover: hover) {
+    &:hover::after {
+      background-color: var(--backgroundHover);
+    }
+
+    &:hover {
+      @apply bg-white dark:bg-zinc-900;
+    }
   }
-  @apply relative flex items-center justify-center overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent hover:bg-white hover:dark:bg-zinc-900 min-h-11 min-w-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-zinc-500/45 dark:focus-visible:ring-offset-zinc-950;
+  @apply relative flex items-center justify-center overflow-hidden select-none text-sm font-semibold text-zinc-950 dark:text-white bg-transparent min-h-11 min-w-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-zinc-500/45 dark:focus-visible:ring-offset-zinc-950;
 }
 
 .input {
@@ -102,9 +179,11 @@
     @apply border-0 rounded-lg pointer-events-none;
   }
 
-  &:hover::after {
-    @apply border;
-    border-color: var(--borderHover);
+  @media (hover: hover) {
+    &:hover::after {
+      @apply border;
+      border-color: var(--borderHover);
+    }
   }
 }
 
@@ -114,6 +193,14 @@
 
 .focusLinkInline {
   @apply rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-zinc-500/45 dark:focus-visible:ring-offset-zinc-950;
+}
+
+.hoverContentPrimary {
+  @media (hover: hover) {
+    &:hover {
+      @apply text-zinc-950 dark:text-white;
+    }
+  }
 }
 
 
@@ -146,4 +233,28 @@
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .icon-motion {
+    transition: transform 150ms ease-in-out;
+  }
+
+  .icon-motion-positive:hover {
+    transform: scale(1.25);
+  }
+
+  .icon-motion-negative:hover {
+    transform: scale(1.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
