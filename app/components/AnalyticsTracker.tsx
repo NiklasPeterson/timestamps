@@ -1,33 +1,25 @@
 "use client";
 
 import { useEffect } from 'react';
-import { getVisitorId, getSessionId } from '../lib/analytics';
+import { getVisitorId } from '../lib/analytics';
 import { usePathname } from 'next/navigation';
 
 export default function AnalyticsTracker() {
   const pathname = usePathname();
 
   useEffect(() => {
-    async function trackPageview() {
-      const visitorId = getVisitorId();
-      const sessionId = getSessionId();
-      const referrer = document.referrer;
+    if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'true') return;
 
-      await fetch('/api/analytics/pageview', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          page: pathname,
-          visitorId,
-          sessionId,
-          referrer,
-        }),
-      });
-    }
-
-    trackPageview();
+    void fetch('/api/analytics/pageview', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        page: pathname,
+        visitorId: getVisitorId(),
+      }),
+    }).catch(() => undefined);
   }, [pathname]);
 
   return null;

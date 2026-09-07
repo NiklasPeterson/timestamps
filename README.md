@@ -42,12 +42,14 @@ npm run dev
 npm run build
 npm run start
 npm run lint
+npm run typecheck
 ```
 
 - `npm run dev` starts the local development server.
 - `npm run build` creates a production build.
 - `npm run start` runs the production build.
 - `npm run lint` checks the code with ESLint.
+- `npm run typecheck` checks TypeScript without emitting files.
 
 ## Optional Supabase integration
 
@@ -59,6 +61,17 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ```
 
 Add them to `.env.local` for local development or to your hosting provider’s environment settings for production. Never expose `SUPABASE_SERVICE_ROLE_KEY` in client-side code or commit it to the repository.
+
+### Analytics privacy and production configuration
+
+Timestamps analytics are disabled by default in local development and Vercel Preview deployments. To enable them in Production only, add both of these values in the Vercel Production environment:
+
+```bash
+NEXT_PUBLIC_ANALYTICS_ENABLED=true
+ANALYTICS_ENABLED=true
+```
+
+When enabled, Timestamps stores a persistent, first-party anonymous visitor UUID and the page-view path. It does not send or store a referrer, does not create browser sessions, and never sends the selected timestamp date or time. The database retains the existing `session_id` field for dashboard compatibility, but new events store the same UUID there as `visitor_id`.
 
 The configured database is expected to provide:
 
