@@ -1,8 +1,9 @@
-# timestamps.app
+# Timestamps
 
 A free, browser-based generator for Discord and UNIX timestamps. Pick a date and time, then copy a Discord-ready timestamp that every viewer sees in their own timezone.
 
-Live site: [timestamps.app](https://timestamps.app)
+Live site: [Timestamps.app](https://timestamps.app)
+Companion app: [Timestamps Discord bot](https://github.com/NiklasPeterson/timestamps-bot)
 
 ## What it does
 
