@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { isAnalyticsEnabled } from '../../../lib/analytics-config';
 import { getSupabaseServerClient } from '../../../lib/supabase';
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -39,7 +40,7 @@ function isPageviewPayload(value: Record<string, unknown>) {
 }
 
 export async function POST(request: NextRequest) {
-  if (process.env.ANALYTICS_ENABLED !== 'true') {
+  if (!isAnalyticsEnabled()) {
     return NextResponse.json({ error: 'Analytics is disabled' }, { status: 503 });
   }
 

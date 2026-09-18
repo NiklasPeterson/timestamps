@@ -4,11 +4,15 @@ import { useEffect } from 'react';
 import { getVisitorId } from '../lib/analytics';
 import { usePathname } from 'next/navigation';
 
-export default function AnalyticsTracker() {
+type AnalyticsTrackerProps = {
+  enabled: boolean;
+};
+
+export default function AnalyticsTracker({ enabled }: AnalyticsTrackerProps) {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'true') return;
+    if (!enabled) return;
 
     void fetch('/api/analytics/pageview', {
       method: 'POST',
@@ -20,7 +24,7 @@ export default function AnalyticsTracker() {
         visitorId: getVisitorId(),
       }),
     }).catch(() => undefined);
-  }, [pathname]);
+  }, [enabled, pathname]);
 
   return null;
 }

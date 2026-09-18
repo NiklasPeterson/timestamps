@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import "./globals.css";
 import { Toaster } from 'sonner'
 import AnalyticsTracker from './components/AnalyticsTracker';
+import { isAnalyticsEnabled } from './lib/analytics-config';
 
 const inter = localFont({
   src: './fonts/InterVariable.woff2',
@@ -70,7 +71,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
         />
-        <AnalyticsTracker />
+        <AnalyticsTracker enabled={isAnalyticsEnabled()} />
         {children}
         <Toaster />
       </body>

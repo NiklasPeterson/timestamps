@@ -64,12 +64,13 @@ Add them to `.env.local` for local development or to your hosting provider’s e
 
 ### Analytics privacy and production configuration
 
-Timestamps analytics are disabled by default in local development and Vercel Preview deployments. To enable them in Production only, add both of these values in the Vercel Production environment:
+Timestamps analytics are enabled automatically on Vercel Production deployments and remain disabled in local development and Vercel Preview deployments. On another production host, enable them with:
 
 ```bash
-NEXT_PUBLIC_ANALYTICS_ENABLED=true
 ANALYTICS_ENABLED=true
 ```
+
+Set `ANALYTICS_ENABLED=false` to explicitly disable analytics on any host.
 
 When enabled, Timestamps stores a persistent, first-party anonymous visitor UUID and the page-view path. It does not send or store a referrer, does not create browser sessions, and never sends the selected timestamp date or time. The database retains the existing `session_id` field for dashboard compatibility, but new events store the same UUID there as `visitor_id`.
 
