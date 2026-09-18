@@ -1,39 +1,28 @@
-import React, { useMemo } from "react";
-import moment from "moment";
-import ResultItem from "./ResultItem";
+import ResultItem from './ResultItem';
+import {
+  DISCORD_TIMESTAMP_FORMATS,
+  formatDiscordTimestamp,
+  toDiscordTimestamp,
+} from '../lib/timestamp';
 
-const FORMATS = [
-  { label: "Short Date Time", format: "LLL", code: "f" },
-  { label: "Long Date Time", format: "LLLL", code: "F" },
-  { label: "Short Date", format: "L", code: "d" },
-  { label: "Long Date", format: "LL", code: "D" },
-  { label: "Short Time", format: "LT", code: "t" },
-  { label: "Relative Time", format: "fromNow", code: "R" },
-];
+interface ResultListProps {
+  timestamp: number;
+}
 
-const formatDate = (dateTime: string, format: string) => {
-  return format === "fromNow" ? moment(dateTime).fromNow() : moment(dateTime).format(format);
-};
-
-const ResultList: React.FC<{ dateTime: string }> = ({ dateTime }) => {
-  const timestamp = useMemo(() => Math.floor(moment(dateTime).valueOf() / 1000), [dateTime]);
-
-  const formattedDates = useMemo(() =>
-    FORMATS.map(({ format }) => formatDate(dateTime, format)),
-    [dateTime]
-  );
-
+export default function ResultList({ timestamp }: ResultListProps) {
   return (
     <div className="flex flex-col gap-2 w-full">
-      {FORMATS.map(({ label, code }, index) => (
-        <ResultItem key={label} label={label} value={`<t:${timestamp}:${code}>`}>
-          <div className="w-full block px-2 contentSecondary select-none text-sm md:text-base">
-            {formattedDates[index]}
-          </div>
+      {DISCORD_TIMESTAMP_FORMATS.map(({ label, format, code }) => (
+        <ResultItem
+          key={label}
+          label={label}
+          value={toDiscordTimestamp(timestamp, code)}
+        >
+          <span className="w-full block px-2 contentSecondary select-none text-sm md:text-base">
+            {formatDiscordTimestamp(timestamp, format)}
+          </span>
         </ResultItem>
       ))}
     </div>
   );
 }
-
-export default ResultList;

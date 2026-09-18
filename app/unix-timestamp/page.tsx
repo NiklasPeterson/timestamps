@@ -57,7 +57,7 @@ export default function UnixTimestampPage() {
 
       <Link
         href="/"
-        className="text-sm contentSecondary hover:contentPrimary w-fit focusLinkInline"
+        className="text-sm contentSecondary hoverContentPrimary w-fit focusLinkInline"
       >
         ← timestamps.app
       </Link>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'sonner'
+import { CopyIcon } from './icons';
 
 interface ResultItemProps {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ interface ResultItemProps {
 }
 
 const SuccessIcon: React.FC = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+  <svg aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
   </svg>
 );
@@ -34,11 +35,8 @@ const ResultItem: React.FC<ResultItemProps> = ({ children, label, value }) => {
         {children}
       </div>
 
-      <span
-        aria-hidden="true"
-        className="flex h-8 w-8 items-center justify-center rounded-lg contentPrimary"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" className="fill-current"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>
+      <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-lg contentPrimary">
+        <CopyIcon />
       </span>
     </button>
   );
