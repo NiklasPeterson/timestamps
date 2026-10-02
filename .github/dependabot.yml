@@ -33,3 +33,25 @@ updates:
           - "tailwindcss"
           - "@tailwindcss/*"
           - "tailwindcss-animate"
+      routine-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      major-production-updates:
+        patterns:
+          - "*"
+        dependency-type: "production"
+        update-types:
+          - "major"
+      major-development-updates:
+        patterns:
+          - "*"
+        dependency-type: "development"
+        update-types:
+          - "major"
+      security-updates:
+        applies-to: "security-updates"
+        patterns:
+          - "*"
